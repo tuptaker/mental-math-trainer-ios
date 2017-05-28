@@ -15,6 +15,10 @@
 		7D640C0D1ED84BCD00F7D87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D640C0B1ED84BCD00F7D87C /* LaunchScreen.storyboard */; };
 		7D640C181ED84BCD00F7D87C /* Mental_Math_TrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D640C171ED84BCD00F7D87C /* Mental_Math_TrainerTests.swift */; };
 		7D640C231ED84BCD00F7D87C /* Mental_Math_TrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D640C221ED84BCD00F7D87C /* Mental_Math_TrainerUITests.swift */; };
+		7D7BAE111ED9A3990074D3A3 /* MMCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE101ED9A3990074D3A3 /* MMCategoriesTableViewController.swift */; };
+		7D7BAE141ED9CECF0074D3A3 /* MMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE131ED9CECF0074D3A3 /* MMConstants.swift */; };
+		7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */; };
+		7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		7D640C1E1ED84BCD00F7D87C /* Mental Math TrainerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mental Math TrainerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D640C221ED84BCD00F7D87C /* Mental_Math_TrainerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mental_Math_TrainerUITests.swift; sourceTree = "<group>"; };
 		7D640C241ED84BCD00F7D87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D7BAE101ED9A3990074D3A3 /* MMCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMCategoriesTableViewController.swift; sourceTree = "<group>"; };
+		7D7BAE131ED9CECF0074D3A3 /* MMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMConstants.swift; sourceTree = "<group>"; };
+		7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMEnumCounterProtocol.swift; sourceTree = "<group>"; };
+		7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemSetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,16 @@
 		7D640BFE1ED84BCD00F7D87C /* Mental Math Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				7D7BAE121ED9A3D00074D3A3 /* ViewControllers */,
 				7D640BFF1ED84BCD00F7D87C /* AppDelegate.swift */,
 				7D640C011ED84BCD00F7D87C /* ViewController.swift */,
 				7D640C031ED84BCD00F7D87C /* Main.storyboard */,
+				7D640C061ED84BCD00F7D87C /* Mental_Math_Trainer.xcdatamodeld */,
 				7D640C091ED84BCD00F7D87C /* Assets.xcassets */,
 				7D640C0B1ED84BCD00F7D87C /* LaunchScreen.storyboard */,
 				7D640C0E1ED84BCD00F7D87C /* Info.plist */,
-				7D640C061ED84BCD00F7D87C /* Mental_Math_Trainer.xcdatamodeld */,
+				7D7BAE131ED9CECF0074D3A3 /* MMConstants.swift */,
+				7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */,
 			);
 			path = "Mental Math Trainer";
 			sourceTree = "<group>";
@@ -126,6 +137,15 @@
 				7D640C241ED84BCD00F7D87C /* Info.plist */,
 			);
 			path = "Mental Math TrainerUITests";
+			sourceTree = "<group>";
+		};
+		7D7BAE121ED9A3D00074D3A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D7BAE101ED9A3990074D3A3 /* MMCategoriesTableViewController.swift */,
+				7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +216,7 @@
 				TargetAttributes = {
 					7D640BFB1ED84BCD00F7D87C = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HW7KXG8JJS;
 						ProvisioningStyle = Automatic;
 					};
 					7D640C121ED84BCD00F7D87C = {
@@ -263,8 +284,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D640C081ED84BCD00F7D87C /* Mental_Math_Trainer.xcdatamodeld in Sources */,
+				7D7BAE141ED9CECF0074D3A3 /* MMConstants.swift in Sources */,
+				7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */,
 				7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */,
+				7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */,
 				7D640C001ED84BCD00F7D87C /* AppDelegate.swift in Sources */,
+				7D7BAE111ED9A3990074D3A3 /* MMCategoriesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HW7KXG8JJS;
 				INFOPLIST_FILE = "Mental Math Trainer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mobile.tuptakemedia.Mental-Math-Trainer";
@@ -430,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HW7KXG8JJS;
 				INFOPLIST_FILE = "Mental Math Trainer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mobile.tuptakemedia.Mental-Math-Trainer";
@@ -511,6 +538,7 @@
 				7D640C291ED84BCD00F7D87C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D640C2A1ED84BCD00F7D87C /* Build configuration list for PBXNativeTarget "Mental Math TrainerTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +547,7 @@
 				7D640C2C1ED84BCD00F7D87C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D640C2D1ED84BCD00F7D87C /* Build configuration list for PBXNativeTarget "Mental Math TrainerUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +556,7 @@
 				7D640C2F1ED84BCD00F7D87C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
