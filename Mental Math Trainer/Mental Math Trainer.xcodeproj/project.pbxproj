@@ -20,6 +20,7 @@
 		7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */; };
 		7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */; };
 		7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */; };
+		7D7BAE1C1EDCD7E70074D3A3 /* MMTipSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE1B1EDCD7E70074D3A3 /* MMTipSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMEnumCounterProtocol.swift; sourceTree = "<group>"; };
 		7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemSetViewController.swift; sourceTree = "<group>"; };
 		7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemGenerator.swift; sourceTree = "<group>"; };
+		7D7BAE1B1EDCD7E70074D3A3 /* MMTipSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMTipSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				7D7BAE101ED9A3990074D3A3 /* MMCategoriesTableViewController.swift */,
 				7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */,
+				7D7BAE1B1EDCD7E70074D3A3 /* MMTipSheetViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7BAE1C1EDCD7E70074D3A3 /* MMTipSheetViewController.swift in Sources */,
 				7D640C081ED84BCD00F7D87C /* Mental_Math_Trainer.xcdatamodeld in Sources */,
 				7D7BAE141ED9CECF0074D3A3 /* MMConstants.swift in Sources */,
 				7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */,

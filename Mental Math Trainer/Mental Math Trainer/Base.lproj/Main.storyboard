@@ -129,11 +129,52 @@
                         <outlet property="answerLabel" destination="ola-pG-75W" id="Tfd-Qh-Lid"/>
                         <outlet property="problemLabel" destination="Qjl-LI-Aru" id="Cf7-ye-jzM"/>
                         <outlet property="solutionField" destination="vqJ-c6-cVU" id="7hA-Hn-bgY"/>
+                        <segue destination="AOD-Wl-Vy0" kind="presentation" identifier="showTipSheet" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="k8F-F5-6Ib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Juz-4y-gst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1773.5999999999999" y="225.33733133433284"/>
+        </scene>
+        <!--Tip Sheet View Controller-->
+        <scene sceneID="X4p-EV-bgd">
+            <objects>
+                <viewController id="AOD-Wl-Vy0" customClass="MMTipSheetViewController" customModule="Mental_Math_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H5S-A0-DeD"/>
+                        <viewControllerLayoutGuide type="bottom" id="MW4-lB-Dxc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="acm-Bx-ETW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w6-0g-0O8" userLabel="Tip Sheet Content">
+                                <rect key="frame" x="16" y="28" width="343" height="536"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Describes how to solve the problem" label="Tip Sheet"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqJ-az-TkE">
+                                <rect key="frame" x="16" y="603" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Return to Problem"/>
+                                <connections>
+                                    <action selector="goBackToProblem:" destination="AOD-Wl-Vy0" eventType="touchUpInside" id="BT7-NL-84e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tipSheetLabel" destination="6w6-0g-0O8" id="81H-yF-1V3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqG-jN-P67" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2613.5999999999999" y="224.4377811094453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sVM-xq-Kuf">

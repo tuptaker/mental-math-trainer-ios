@@ -32,6 +32,13 @@ class MMProblemSetViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tipSheetVC = segue.destination as? MMTipSheetViewController,
+            let tipSheetText = self.currentProblem?.tipSheetText {
+            tipSheetVC.tipSheetText = tipSheetText
+        }
+    }
+    
     @IBAction func checkYourAnswer(_ sender: UIButton) {
         print("Tapped checkYourAnswer")
         self.doneButtonAction()
@@ -62,6 +69,7 @@ class MMProblemSetViewController: UIViewController {
     @IBAction func showTipSheetForThisProblemSet(_ sender: UIButton) {
         print("Tapped showTipSheetForThisProblemSet")
         self.doneButtonAction()
+        self.performSegue(withIdentifier: "showTipSheet", sender: self)
     }
 
     func addDoneButtonOnKeyboard() {
