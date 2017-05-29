@@ -19,6 +19,7 @@
 		7D7BAE141ED9CECF0074D3A3 /* MMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE131ED9CECF0074D3A3 /* MMConstants.swift */; };
 		7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */; };
 		7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */; };
+		7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7D7BAE131ED9CECF0074D3A3 /* MMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMConstants.swift; sourceTree = "<group>"; };
 		7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMEnumCounterProtocol.swift; sourceTree = "<group>"; };
 		7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemSetViewController.swift; sourceTree = "<group>"; };
+		7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				7D640C0E1ED84BCD00F7D87C /* Info.plist */,
 				7D7BAE131ED9CECF0074D3A3 /* MMConstants.swift */,
 				7D7BAE151EDB164E0074D3A3 /* MMEnumCounterProtocol.swift */,
+				7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */,
 			);
 			path = "Mental Math Trainer";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */,
 				7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */,
 				7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */,
+				7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */,
 				7D640C001ED84BCD00F7D87C /* AppDelegate.swift in Sources */,
 				7D7BAE111ED9A3990074D3A3 /* MMCategoriesTableViewController.swift in Sources */,
 			);

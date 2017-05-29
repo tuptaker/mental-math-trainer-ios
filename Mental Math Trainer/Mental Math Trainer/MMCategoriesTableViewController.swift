@@ -10,7 +10,7 @@ import UIKit
 
 class MMCategoriesTableViewController: UITableViewController {
     
-    var selectedCategory: CategorySummary = (Category(rawValue: 0)?.summary())!
+    var selectedCategory: Category?
 
     // TODO let mentalMathDictionary = ["key":"value", "key2":"value2"]
 
@@ -40,7 +40,7 @@ class MMCategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedCategory = (Category(rawValue: indexPath.row)?.summary())!
+        self.selectedCategory = Category(rawValue: indexPath.row)
         self.performSegue(withIdentifier: "showProblemSet", sender: self)
     }
     
@@ -48,8 +48,9 @@ class MMCategoriesTableViewController: UITableViewController {
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if let destinationVC = segue.destination as? MMProblemSetViewController {
+            destinationVC.currentCategory = self.selectedCategory
+        }
      }
 
     /*

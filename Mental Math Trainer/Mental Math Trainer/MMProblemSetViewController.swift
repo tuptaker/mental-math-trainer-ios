@@ -9,7 +9,9 @@
 import UIKit
 
 class MMProblemSetViewController: UIViewController {
-
+    var currentCategory = Category(rawValue: 0)
+    var problemGenerator = MMProblemGenerator.sharedInstance
+    var currentProblem: MMProblem?
     @IBOutlet weak var problemLabel: UILabel!
     @IBOutlet weak var solutionField: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
@@ -17,6 +19,12 @@ class MMProblemSetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDoneButtonOnKeyboard()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.currentProblem = self.generateProblem()
+        self.updateProblemLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,11 +35,28 @@ class MMProblemSetViewController: UIViewController {
     @IBAction func checkYourAnswer(_ sender: UIButton) {
         print("Tapped checkYourAnswer")
         self.doneButtonAction()
+        
+        let correctAnswer = Int((self.currentProblem?.solution)!)
+        
+        if let typedAnswer = self.solutionField.text, let typedAnswerInt = Int(typedAnswer), typedAnswerInt == correctAnswer {
+                self.answerLabel.text = "Correct! Answer is \(correctAnswer)."
+                self.answerLabel.textColor = UIColor.blue
+        } else {
+            self.answerLabel.text = "Incorrect! Answer is \(correctAnswer)."
+            self.answerLabel.textColor = UIColor.red
+        }
+
+        self.answerLabel.alpha = 1
     }
     
     @IBAction func moveToNextProblem(_ sender: UIButton) {
         print("Tapped moveToNextProblem")
         self.doneButtonAction()
+        self.solutionField.text = ""
+        self.answerLabel.text = ""
+        self.answerLabel.alpha  = 0
+        self.currentProblem = self.generateProblem()
+        self.updateProblemLabels()
     }
     
     @IBAction func showTipSheetForThisProblemSet(_ sender: UIButton) {
@@ -57,6 +82,15 @@ class MMProblemSetViewController: UIViewController {
     
     func doneButtonAction() {
         self.solutionField.resignFirstResponder()
+    }
+    
+    func generateProblem() -> MMProblem {
+        let currentProblem = self.problemGenerator.generateFor(problemCategory: self.currentCategory!)
+        return currentProblem
+    }
+    
+    func updateProblemLabels() {
+        self.problemLabel.text = self.currentProblem?.expressionText
     }
 
 }
