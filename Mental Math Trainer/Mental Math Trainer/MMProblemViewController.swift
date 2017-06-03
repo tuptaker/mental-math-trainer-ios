@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  MMProblemViewController.swift
 //  Mental Math Trainer
 //
-//  Created by Fabricio Machado on 5/26/17.
+//  Created by Fabricio Machado on 5/30/17.
 //  Copyright © 2017 Fabricio Machado. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MMProblemViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,4 +19,3 @@ class ViewController: UIViewController {
     }
 
 }
-

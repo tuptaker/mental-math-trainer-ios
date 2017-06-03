@@ -8,10 +8,8 @@
 
 import UIKit
 
-class MMProblemSetViewController: UIViewController {
-    var currentCategory = Category(rawValue: 0)
-    var problemGenerator = MMProblemGenerator.sharedInstance
-    var currentProblem: MMProblem?
+class MMProblemSetViewController: MMBaseProblemViewController {
+//    var currentProblem: MMProblem?
     @IBOutlet weak var problemLabel: UILabel!
     @IBOutlet weak var solutionField: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
@@ -23,13 +21,11 @@ class MMProblemSetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.currentProblem = self.generateProblem()
         self.updateProblemLabels()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,7 +36,6 @@ class MMProblemSetViewController: UIViewController {
     }
     
     @IBAction func checkYourAnswer(_ sender: UIButton) {
-        print("Tapped checkYourAnswer")
         self.doneButtonAction()
         
         let correctAnswer = Int((self.currentProblem?.solution)!)
@@ -57,19 +52,20 @@ class MMProblemSetViewController: UIViewController {
     }
     
     @IBAction func moveToNextProblem(_ sender: UIButton) {
-        print("Tapped moveToNextProblem")
         self.doneButtonAction()
         self.solutionField.text = ""
         self.answerLabel.text = ""
         self.answerLabel.alpha  = 0
-        self.currentProblem = self.generateProblem()
-        self.updateProblemLabels()
+        if let parentVC = self.parent as? MMProblemContainerViewController {
+            parentVC.generateNextProblemAndRefresh()
+        }
     }
     
     @IBAction func showTipSheetForThisProblemSet(_ sender: UIButton) {
-        print("Tapped showTipSheetForThisProblemSet")
         self.doneButtonAction()
-        self.performSegue(withIdentifier: "showTipSheet", sender: self)
+        if let parentVC = self.parent as? MMProblemContainerViewController, let tipText = self.currentProblem?.tipSheetText {
+            parentVC.showTipSheet(tipVerbiage: tipText)
+        }
     }
 
     func addDoneButtonOnKeyboard() {
@@ -91,12 +87,7 @@ class MMProblemSetViewController: UIViewController {
     func doneButtonAction() {
         self.solutionField.resignFirstResponder()
     }
-    
-    func generateProblem() -> MMProblem {
-        let currentProblem = self.problemGenerator.generateFor(problemCategory: self.currentCategory!)
-        return currentProblem
-    }
-    
+
     func updateProblemLabels() {
         self.problemLabel.text = self.currentProblem?.expressionText
     }

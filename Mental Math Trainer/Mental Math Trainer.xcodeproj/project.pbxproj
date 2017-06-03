@@ -21,6 +21,13 @@
 		7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */; };
 		7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */; };
 		7D7BAE1C1EDCD7E70074D3A3 /* MMTipSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE1B1EDCD7E70074D3A3 /* MMTipSheetViewController.swift */; };
+		7D7BAE1E1EDE1C1C0074D3A3 /* MMProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE1D1EDE1C1C0074D3A3 /* MMProblemViewController.swift */; };
+		7D7BAE201EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE1F1EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift */; };
+		7D7BAE221EDEE45E0074D3A3 /* MMEmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE211EDEE45E0074D3A3 /* MMEmptySegue.swift */; };
+		7D7BAE241EE322B80074D3A3 /* MMTenByTenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE231EE322B80074D3A3 /* MMTenByTenViewController.swift */; };
+		7D7BAE261EE322FD0074D3A3 /* MMBaseProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE251EE322FD0074D3A3 /* MMBaseProblemViewController.swift */; };
+		7D7BAE281EE326E10074D3A3 /* MMEightByNineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE271EE326E10074D3A3 /* MMEightByNineViewController.swift */; };
+		7D7BAE2A1EE326F50074D3A3 /* MMElevenToNineteenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE291EE326F50074D3A3 /* MMElevenToNineteenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,13 @@
 		7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemSetViewController.swift; sourceTree = "<group>"; };
 		7D7BAE191EDB87E10074D3A3 /* MMProblemGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemGenerator.swift; sourceTree = "<group>"; };
 		7D7BAE1B1EDCD7E70074D3A3 /* MMTipSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMTipSheetViewController.swift; sourceTree = "<group>"; };
+		7D7BAE1D1EDE1C1C0074D3A3 /* MMProblemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemViewController.swift; sourceTree = "<group>"; };
+		7D7BAE1F1EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMProblemContainerViewController.swift; sourceTree = "<group>"; };
+		7D7BAE211EDEE45E0074D3A3 /* MMEmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMEmptySegue.swift; sourceTree = "<group>"; };
+		7D7BAE231EE322B80074D3A3 /* MMTenByTenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMTenByTenViewController.swift; sourceTree = "<group>"; };
+		7D7BAE251EE322FD0074D3A3 /* MMBaseProblemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMBaseProblemViewController.swift; sourceTree = "<group>"; };
+		7D7BAE271EE326E10074D3A3 /* MMEightByNineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMEightByNineViewController.swift; sourceTree = "<group>"; };
+		7D7BAE291EE326F50074D3A3 /* MMElevenToNineteenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMElevenToNineteenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +164,13 @@
 				7D7BAE101ED9A3990074D3A3 /* MMCategoriesTableViewController.swift */,
 				7D7BAE171EDB1D2D0074D3A3 /* MMProblemSetViewController.swift */,
 				7D7BAE1B1EDCD7E70074D3A3 /* MMTipSheetViewController.swift */,
+				7D7BAE1D1EDE1C1C0074D3A3 /* MMProblemViewController.swift */,
+				7D7BAE1F1EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift */,
+				7D7BAE211EDEE45E0074D3A3 /* MMEmptySegue.swift */,
+				7D7BAE231EE322B80074D3A3 /* MMTenByTenViewController.swift */,
+				7D7BAE251EE322FD0074D3A3 /* MMBaseProblemViewController.swift */,
+				7D7BAE271EE326E10074D3A3 /* MMEightByNineViewController.swift */,
+				7D7BAE291EE326F50074D3A3 /* MMElevenToNineteenViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -291,9 +312,16 @@
 			files = (
 				7D7BAE1C1EDCD7E70074D3A3 /* MMTipSheetViewController.swift in Sources */,
 				7D640C081ED84BCD00F7D87C /* Mental_Math_Trainer.xcdatamodeld in Sources */,
+				7D7BAE2A1EE326F50074D3A3 /* MMElevenToNineteenViewController.swift in Sources */,
 				7D7BAE141ED9CECF0074D3A3 /* MMConstants.swift in Sources */,
+				7D7BAE221EDEE45E0074D3A3 /* MMEmptySegue.swift in Sources */,
 				7D7BAE181EDB1D2D0074D3A3 /* MMProblemSetViewController.swift in Sources */,
+				7D7BAE241EE322B80074D3A3 /* MMTenByTenViewController.swift in Sources */,
+				7D7BAE1E1EDE1C1C0074D3A3 /* MMProblemViewController.swift in Sources */,
+				7D7BAE261EE322FD0074D3A3 /* MMBaseProblemViewController.swift in Sources */,
+				7D7BAE201EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift in Sources */,
 				7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */,
+				7D7BAE281EE326E10074D3A3 /* MMEightByNineViewController.swift in Sources */,
 				7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */,
 				7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */,
 				7D640C001ED84BCD00F7D87C /* AppDelegate.swift in Sources */,

@@ -12,6 +12,7 @@ struct MMProblem {
     var expressionText: String
     var solution: Float
     var tipSheetText: String
+    var problemType: String
 }
 
 class MMProblemGenerator {
@@ -19,7 +20,7 @@ class MMProblemGenerator {
     private init() {} //This prevents others from using the default '()' initializer for this class.
     
     func generateFor(problemCategory: Category) -> MMProblem {
-        var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "")
+        var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "", problemType: "")
         switch problemCategory {
         case .allLectures:
             problem = self.generateLecture1Problem()
@@ -49,7 +50,8 @@ z               problem = self.generateLecture5Problem()
         case .lecture12:
             problem = self.generateLecture12Problem()
  */
-        default: break
+        default:
+            problem = self.generateLecture1Problem()
         }
         return problem
     }
@@ -64,11 +66,14 @@ z               problem = self.generateLecture5Problem()
             "To square a 2-digit number that ends in 5, multiply the  first digit in the number by the next higher digit, then attach 25 at the end. Example: 352   3 × 4 = 12; answer: 1225. For 3-digit numbers, multiply the  first two numbers together by the next higher number, then attach 25. Example: 3052   30 × 31 = 930; answer: 93,025.",
             "To multiply two 2-digit numbers that have the same  first digits and last digits that sum to 10, multiply the  first digit by the next higher digit, then attach the product of the last digits in the original two numbers. Example: 84 × 86   8 × 9 = 72 and 4 × 6 = 24; answer: 7224.",
             "To multiply a number between 10 and 20 by a 1-digit number, multiply the 1-digit number by 10, then multiply it by the second digit in the 2-digit number, and add the products. Example: 13 × 6   (6 × 10) + (6 × 3) = 60 + 18; answer: 78.",
-            "To multiply two numbers that are both between 10 and 20, add the  first number and the last digit of the second number, multiply the result by 10, then add that result to the product of the last digits in both numbers of the original problem. Example: 13 × 14   13 + 4 = 17, 17 × 10 = 170, 3 × 4 = 12, 170 + 12 = 182; answer: 182."
+            "To multiply two numbers that are both between 10 and 20, add the  first number and the last digit of the second number, multiply the result by 10, then add that result to the product of the last digits in both numbers of the original problem. Example: 13 × 14   13 + 4 = 17, 17 × 10 = 170, 3 × 4 = 12, 170 + 12 = 182; answer: 182.",
+            "Fill out the standard 10-by-10 multiplication table as quickly as you can. It’s probably easiest to  ll it out one row at a time by counting.",
+            "Create an 8-by-9 multiplication table in which the rows represent the numbers from 2 to 9 and the columns represent the numbers from 11 to 19. For an extra challenge,  ll out the squares in random order.",
+            "Create the multiplication table in which the rows and columns represent the numbers from 11 to 19. For an extra challenge,  ll out the rows in random order. Be sure to use the shortcuts we learned in this lecture, including those for multiplying by 11."
             ]
         
-        var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "")
-        let lecture1ProblemType = arc4random_uniform(6) + 1
+        var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "", problemType: "standard")
+        let lecture1ProblemType = arc4random_uniform(9) + 1
         switch lecture1ProblemType {
         case 1:
             /*
@@ -81,7 +86,7 @@ z               problem = self.generateLecture5Problem()
             if (elevenFirstInOrderSequence == 1) {
                 expression = "\(twoDigitOperand) × 11"
             }
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
         case 2:
             /*
              2. The product of 11 and any 3-digit number also begins and ends with the  first and last digits of the multiplier, although the  first digit can change from carries. In the middle, insert the result of adding the  first and second digits and the second and third digits. Example: 314 × 11   3 + 1 = 4 and 1 + 4 = 5; answer: 3454.
@@ -93,7 +98,7 @@ z               problem = self.generateLecture5Problem()
             if (elevenFirstInOrderSequence == 1) {
                 expression = "\(threeDigitOperand) × 11"
             }
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
         case 3:
             /*
              3. To square a 2-digit number that ends in 5, multiply the  first digit in the number by the next higher digit, then attach 25 at the end. Example: 352   3 × 4 = 12; answer: 1225. For 3-digit numbers, multiply the  first two numbers together by the next higher number, then attach 25. Example: 3052   30 × 31 = 930; answer: 93,025.
@@ -104,7 +109,7 @@ z               problem = self.generateLecture5Problem()
             }
             let result = pow(Float(twoDigitEndingInFive), 2.0)
             let expression = "\(twoDigitEndingInFive)\u{00B2}"
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
         case 4:
             /*
              4. To multiply two 2-digit numbers that have the same  first digits and last digits that sum to 10, multiply the  first digit by the next higher digit, then attach the product of the last digits in the original two numbers. Example: 84 × 86   8 × 9 = 72 and 4 × 6 = 24; answer: 7224.
@@ -127,7 +132,7 @@ z               problem = self.generateLecture5Problem()
             
             let result = firstOperand * secondOperand
             let expression = "\(firstOperand) × \(secondOperand)"
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
         case 5:
             /*
              5. To multiply a number between 10 and 20 by a 1-digit number, multiply the 1-digit number by 10, then multiply it by the second digit in the 2-digit number, and add the products. Example: 13 × 6   (6 × 10) + (6 × 3) = 60 + 18; answer: 78.
@@ -136,7 +141,7 @@ z               problem = self.generateLecture5Problem()
             let secondOperand = Int(arc4random_uniform(9))
             let result = firstOperand * secondOperand
             let expression = "\(firstOperand) × \(secondOperand)"
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
         case 6:
             /*
              6. To multiply two numbers that are both between 10 and 20, add the  first number and the last digit of the second number, multiply the result by 10, then add that result to the product of the last digits in both numbers of the original problem. Example: 13 × 14   13 + 4 = 17, 17 × 10 = 170, 3 × 4 = 12, 170 + 12 = 182; answer: 182.
@@ -145,7 +150,22 @@ z               problem = self.generateLecture5Problem()
             let secondOperand = Int(arc4random_uniform(9) + 1) + 10
             let result = firstOperand * secondOperand
             let expression = "\(firstOperand) × \(secondOperand)"
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
+        case 7:
+            /*
+             Fill out the standard 10-by-10 multiplication table as quickly as you can. It’s probably easiest to  ll it out one row at a time by counting.
+            */
+            problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "tenByTenTable")
+        case 8:
+            /*
+             Create an 8-by-9 multiplication table in which the rows represent the numbers from 2 to 9 and the columns represent the numbers from 11 to 19. For an extra challenge,  ll out the squares in random order.
+            */
+            problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "eightByNineTable")
+        case 9:
+            /*
+             Create the multiplication table in which the rows and columns represent the numbers from 11 to 19. For an extra challenge,  ll out the rows in random order. Be sure to use the shortcuts we learned in this lecture, including those for multiplying by 11.
+            */
+            problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "elevenToNineteenTable")
         default:
             let threeDigitOperand = arc4random_uniform(999) + 1
             let result = 11 * threeDigitOperand;
@@ -154,7 +174,7 @@ z               problem = self.generateLecture5Problem()
             if (elevenFirstInOrderSequence == 1) {
                 expression = "\(threeDigitOperand) × 11"
             }
-            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1])
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture1ProblemType) - 1], problemType: "standard")
         }
         return problem
     }
