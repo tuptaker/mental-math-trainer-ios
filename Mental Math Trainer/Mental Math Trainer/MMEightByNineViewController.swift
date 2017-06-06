@@ -8,10 +8,14 @@
 
 import UIKit
 
-class MMEightByNineViewController: MMBaseProblemViewController {
+class MMEightByNineViewController: MMBaseProblemViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var multTableCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cellView =  UINib(nibName: "MMMultTableCollectionViewCell", bundle: nil)
+
+        self.multTableCollectionView.register(cellView, forCellWithReuseIdentifier: "multTableCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,4 +37,16 @@ class MMEightByNineViewController: MMBaseProblemViewController {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let multTableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "multTableCell", for: indexPath)
+        return multTableCell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 9
+    }
 }

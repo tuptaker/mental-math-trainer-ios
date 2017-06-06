@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D2136D31EE6346800A8C582 /* MMMultTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */; };
+		7D2136D41EE6346800A8C582 /* MMMultTableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */; };
 		7D640C001ED84BCD00F7D87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D640BFF1ED84BCD00F7D87C /* AppDelegate.swift */; };
 		7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D640C011ED84BCD00F7D87C /* ViewController.swift */; };
 		7D640C051ED84BCD00F7D87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D640C031ED84BCD00F7D87C /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMMultTableCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMMultTableCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D640BFC1ED84BCD00F7D87C /* Mental Math Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mental Math Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D640BFF1ED84BCD00F7D87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D640C011ED84BCD00F7D87C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D2136D51EE6347300A8C582 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */,
+				7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		7D640BF31ED84BCD00F7D87C = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		7D640BFE1ED84BCD00F7D87C /* Mental Math Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				7D2136D51EE6347300A8C582 /* Views */,
 				7D7BAE121ED9A3D00074D3A3 /* ViewControllers */,
 				7D640BFF1ED84BCD00F7D87C /* AppDelegate.swift */,
 				7D640C011ED84BCD00F7D87C /* ViewController.swift */,
@@ -286,6 +300,7 @@
 				7D640C0D1ED84BCD00F7D87C /* LaunchScreen.storyboard in Resources */,
 				7D640C0A1ED84BCD00F7D87C /* Assets.xcassets in Resources */,
 				7D640C051ED84BCD00F7D87C /* Main.storyboard in Resources */,
+				7D2136D41EE6346800A8C582 /* MMMultTableCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +337,7 @@
 				7D7BAE201EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift in Sources */,
 				7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */,
 				7D7BAE281EE326E10074D3A3 /* MMEightByNineViewController.swift in Sources */,
+				7D2136D31EE6346800A8C582 /* MMMultTableCollectionViewCell.swift in Sources */,
 				7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */,
 				7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */,
 				7D640C001ED84BCD00F7D87C /* AppDelegate.swift in Sources */,
