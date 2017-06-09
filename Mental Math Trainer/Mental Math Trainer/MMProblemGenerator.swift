@@ -73,7 +73,7 @@ z               problem = self.generateLecture5Problem()
             ]
         
         var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "", problemType: "standard")
-        let lecture1ProblemType = arc4random_uniform(9) + 1
+        let lecture1ProblemType = 8 //arc4random_uniform(9) + 1
         switch lecture1ProblemType {
         case 1:
             /*
