@@ -10,7 +10,9 @@ import UIKit
 
 class MMMultTableCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var multResultLabel: UILabel!
-
+    @IBOutlet weak var correctIndicator: UILabel!
+    @IBOutlet weak var incorrectIndicator: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

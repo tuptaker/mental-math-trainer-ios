@@ -9,7 +9,6 @@
 import UIKit
 
 class MMProblemSetViewController: MMBaseProblemViewController {
-//    var currentProblem: MMProblem?
     @IBOutlet weak var problemLabel: UILabel!
     @IBOutlet weak var solutionField: UITextField!
     @IBOutlet weak var answerLabel: UILabel!

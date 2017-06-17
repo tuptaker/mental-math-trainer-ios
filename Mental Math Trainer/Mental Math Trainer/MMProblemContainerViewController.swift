@@ -90,7 +90,7 @@ class MMProblemContainerViewController: UIViewController {
         destination.view.frame =  CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
         origin.willMove(toParentViewController: nil)
         self.addChildViewController(destination)
-        self.transition(from: origin, to: destination, duration: 1.0, options: .transitionCrossDissolve, animations: nil) { (isFinished) in
+        self.transition(from: origin, to: destination, duration: 0.25, options: .transitionCrossDissolve, animations: nil) { (isFinished) in
             origin.removeFromParentViewController()
             destination.didMove(toParentViewController: self)
             
