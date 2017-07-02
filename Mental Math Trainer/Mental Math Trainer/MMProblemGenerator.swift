@@ -189,10 +189,11 @@ class MMProblemGenerator {
             "Do the following subtraction problems from left to right.",
             "Determine the complements of the following numbers, that is, their distance from 100.",
             "Use complements to solve these problems. For example, try 835 – 467. We  first subtract 500 (835 – 500 = 335), but then we need to add back something. How far is 467 from 500, or how far is 67 from 100? Find the complement of 67 (33) and add it to 335: 335 + 33 = 368.",
-            "Determine the complements of these 3-digit numbers, that is, their distance from 1000."
+            "Determine the complements of these 3-digit numbers, that is, their distance from 1000.",
+            "Use complements to determine the correct amount of change."
         ]
         
-        let lecture2ProblemType = arc4random_uniform(7) + 1
+        let lecture2ProblemType = 8// arc4random_uniform(8) + 1
         var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "", problemType: "standard")
         
         problem = MMProblem(expressionText: "expression", solution: Float(0.0), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
@@ -300,7 +301,7 @@ class MMProblemGenerator {
             problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
         case 7:
             /*
-             Determine the complements of these 3-digit numbers , that is, their distance from 1000.
+             Determine the complements of these 3-digit numbers, that is, their distance from 1000.
              */
             var threeDigitOperandA = Int32(arc4random_uniform(999) + 1)
             var criteriaNotSatisfied = true
@@ -315,8 +316,40 @@ class MMProblemGenerator {
             let expression = "Determine complement of \(threeDigitOperandA)"
             problem = MMProblem(expressionText: expression, solution: Float(1000 - threeDigitOperandA), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
         case 8:
-             /* TODO: page 19, start from the 'correct amount of change' problems*/
-            print("not implemented")
+             /* Use complements to determine the correct amount of change. */
+            let cashDue = Float(arc4random_uniform(9999)) + 100.00
+            /* TODO: make it generate 3 digit numbers more frequently */
+            var cashToChange = Float(10.00)
+            let randomlyChooseTenOrTwenty = arc4random_uniform(2)
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            print("ten or twenty \(randomlyChooseTenOrTwenty)")
+            if (cashDue <= 999) {
+                switch randomlyChooseTenOrTwenty {
+                case 0:
+                    cashToChange = 10.00
+                case 1:
+                    cashToChange = 20.00
+                default:
+                    cashToChange = 10.00
+                }
+            } else {
+                cashToChange = 100.00
+            }
+            
+            let cashDueIntermediate = cashDue / 100.00
+            let cashDueNumber = NSNumber(value: cashDueIntermediate)
+            let cashDueStr = formatter.string(from: cashDueNumber)
+            let cashToChangeIntermediate = NSNumber(value: cashToChange)
+            let cashToChangeStr = formatter.string(from: cashToChangeIntermediate)
+            
+            var expression = ""
+            if let cashDueStr = cashDueStr, let cashToChangeStr = cashToChangeStr {
+                expression = "$\(cashDueStr) from $\(cashToChangeStr)"
+            }
+            problem = MMProblem(expressionText: expression, solution: Float(cashToChange - cashDue), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
         default:
             /*
              1. "Solve the following mental addition problems by calculating from left to right. To add 3-digit numbers,  rst add the 100s, then the 10s, then the 1s. For 314 + 159,  first add 314 + 100 = 414. The problem is now simpler, 414 + 59; keep the 400 in mind and focus on 14 + 59. Add 14 + 50 = 64, then add 9 to get 73. The answer to the original problem is 473. For an added challenge, look away from the numbers after reading the problem."
