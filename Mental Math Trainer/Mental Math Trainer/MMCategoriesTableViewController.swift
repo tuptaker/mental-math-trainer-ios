@@ -27,7 +27,7 @@ class MMCategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Category.caseCount
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let categoryCell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
 
@@ -43,9 +43,9 @@ class MMCategoriesTableViewController: UITableViewController {
     }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? MMProblemContainerViewController {
+        if let destinationVC = segue.destination as? MMProblemViewController {
             destinationVC.currentCategory = self.selectedCategory
         }
      }
-
+    
 }

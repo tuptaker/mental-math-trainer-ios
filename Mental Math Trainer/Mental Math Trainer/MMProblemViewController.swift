@@ -9,13 +9,20 @@
 import UIKit
 
 class MMProblemViewController: UIViewController {
-    
+    var currentCategory = Category(rawValue: 0)
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? MMProblemContainerViewController {
+            destinationVC.currentCategory = self.currentCategory
+        }
     }
 
 }
