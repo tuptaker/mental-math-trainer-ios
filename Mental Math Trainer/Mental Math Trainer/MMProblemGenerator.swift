@@ -193,7 +193,7 @@ class MMProblemGenerator {
             "Use complements to determine the correct amount of change."
         ]
         
-        let lecture2ProblemType = 8// arc4random_uniform(8) + 1
+        let lecture2ProblemType = arc4random_uniform(8) + 1
         var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "", problemType: "standard")
         
         problem = MMProblem(expressionText: "expression", solution: Float(0.0), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
@@ -316,10 +316,18 @@ class MMProblemGenerator {
             let expression = "Determine complement of \(threeDigitOperandA)"
             problem = MMProblem(expressionText: expression, solution: Float(1000 - threeDigitOperandA), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
         case 8:
-             /* Use complements to determine the correct amount of change. */
-            let cashDue = Float(arc4random_uniform(9999)) + 100.00
-            /* TODO: make it generate 3 digit numbers more frequently */
-            var cashToChange = Float(10.00)
+            /* Use complements to determine the correct amount of change. */
+            let randomlyChooseThreeOrFourDigitNum = arc4random_uniform(2)
+            var cashDue: Float = 0
+            
+            /* Give equal weight to occurence 3 and 4 digit numbers */
+            if (randomlyChooseThreeOrFourDigitNum == 0) {
+                cashDue = Float(arc4random_uniform(999)) + 100.00
+            } else {
+                cashDue = Float(arc4random_uniform(9999)) + 100.00
+            }
+            
+            var cashToChange: Float = 0
             let randomlyChooseTenOrTwenty = arc4random_uniform(2)
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
