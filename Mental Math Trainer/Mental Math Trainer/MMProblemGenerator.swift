@@ -179,11 +179,10 @@ class MMProblemGenerator {
         return problem
     }
     
-    
     private func generateLecture2Problem() -> MMProblem {
         // There are 6 types of problem in Lecture 1, so we have to randomely generate one of the 6 problems.
         var tipSheet = [
-            "Solve the following mental addition problems by calculating from left to right. To add 3-digit numbers,  rst add the 100s, then the 10s, then the 1s. For 314 + 159,  first add 314 + 100 = 414. The problem is now simpler, 414 + 59; keep the 400 in mind and focus on 14 + 59. Add 14 + 50 = 64, then add 9 to get 73. The answer to the original problem is 473. For an added challenge, look away from the numbers after reading the problem.",
+            "Solve the following mental addition problems by calculating from left to right. To add 3-digit numbers,  First add the 100s, then the 10s, then the 1s. For 314 + 159,  first add 314 + 100 = 414. The problem is now simpler, 414 + 59; keep the 400 in mind and focus on 14 + 59. Add 14 + 50 = 64, then add 9 to get 73. The answer to the original problem is 473. For an added challenge, look away from the numbers after reading the problem.",
             "Do these 2-digit addition problems in two ways; make sure the second way involves subtraction. Use complements to do this. For example, 28 + 74 can be thought of instead as 30 + 74, which is 104, but then subtract 2, which is 102. This way, a carry is avoided.",
             "Again, calculate from left to right with these 3-digit numbers. For the harder problems, it may be helpful to say the problem out loud before starting the calculation. Do them in two ways; make sure the second way uses subtraction.",
             "Do the following subtraction problems from left to right.",
@@ -191,7 +190,7 @@ class MMProblemGenerator {
             "Use complements to solve these problems. For example, try 835 – 467. We  first subtract 500 (835 – 500 = 335), but then we need to add back something. How far is 467 from 500, or how far is 67 from 100? Find the complement of 67 (33) and add it to 335: 335 + 33 = 368.",
             "Determine the complements of these 3-digit numbers, that is, their distance from 1000.",
             "Use complements to determine the correct amount of change.",
-            ""
+            "Work from left to right, one digit at a time, and look for opportunities to use complements to turn hard addition problems into simple subtraction problems, and vice versa."
         ]
         
         let lecture2ProblemType = arc4random_uniform(8) + 1
@@ -334,7 +333,7 @@ class MMProblemGenerator {
             formatter.numberStyle = .decimal
             formatter.minimumFractionDigits = 2
             formatter.maximumFractionDigits = 2
-
+            
             if (cashDue <= 999) {
                 switch randomlyChooseTenOrTwenty {
                 case 0:
@@ -360,16 +359,16 @@ class MMProblemGenerator {
             }
             problem = MMProblem(expressionText: expression, solution: Float(cashToChange - cashDue), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
         case 9:
-            /* TODO:
+            /*
              Adding and subtracting 3 and 4 digit numbers  to/from 2 and 3 digit numbers with only 1 overlapping digit.
              Examples: 1620 + 48, 6300-108, etc.
              Algorithm for generating this kind of problem:
              1. Randomly generate a 3 or 4 digit number 'A' that is divisible by 10 (hence, A % 10 = 0)
              2. If step 1 results in 3 digit number, randomly generate a 2 digit number 'B' greater than 10.
              3. If step 1 results in a 4 digit number, randomly generate a 2 digit number greater than 10 OR
-                a 3 digit number divisible by 10. Call this number 'B'.
+             a 3 digit number divisible by 10. Call this number 'B'.
              4. Randomly generate the operation '+' or '-' and compose the problem 'A + B' or 'A - B'. DONE!!
-            */
+             */
             let randomlyChooseThreeOrFourDigitOpA = arc4random_uniform(2)
             let randomlyChooseAdditionOrSubtraction = arc4random_uniform(2)
             let randomlyChooseTwoOrThreeDigitOpA = Int32(-1)
@@ -377,12 +376,12 @@ class MMProblemGenerator {
             var opA = Int32(-1)
             var opB = Int32(-1)
             var expression = ""
-            var operand = (randomlyChooseTwoOrThreeDigitOpA == 0) ? "+" : "-"
+            let operand = (arc4random_uniform(2) == 0) ? "+" : "-"
             
             switch (randomlyChooseThreeOrFourDigitOpA) {
             case 0:
                 repeat {
-                  opA = Int32((arc4random_uniform(999) + 1) * 10)
+                    opA = Int32((arc4random_uniform(999) + 1) * 10)
                     if (opA % 100 == 0) {
                         // If opA is a multiple of 100, use 3-digit multiple of 10 for opB
                         opB = Int32((arc4random_uniform(99) + 1) * 10)
@@ -394,19 +393,29 @@ class MMProblemGenerator {
                         criteriaNotSatisfied = false
                     }
                 } while(criteriaNotSatisfied)
-                print("Four digit opA")
-                
+                break
             case 1:
-                print("Three digit opA")
+                opA = Int32((arc4random_uniform(99) + 1) * 10)
+                opB = Int32(arc4random_uniform(89) + 11)
+                break
             default:
-                print("Four digit opA")
+                break
             }
-            
-            
-            print("case 9")
+            var result = 0
+            expression = "\(opA) " + operand + " \(opB)"
+            if (operand == "-") {
+                if (opA < opB) {
+                    result = Int(opB) - Int(opA)
+                } else {
+                    result = Int(opA) - Int(opB)
+                }
+            } else {
+                result = Int(opA) + Int(opB)
+            }
+            problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText: tipSheet[Int(lecture2ProblemType) - 1], problemType: "standard")
         default:
             /*
-             1. "Solve the following mental addition problems by calculating from left to right. To add 3-digit numbers,  rst add the 100s, then the 10s, then the 1s. For 314 + 159,  first add 314 + 100 = 414. The problem is now simpler, 414 + 59; keep the 400 in mind and focus on 14 + 59. Add 14 + 50 = 64, then add 9 to get 73. The answer to the original problem is 473. For an added challenge, look away from the numbers after reading the problem."
+             1. "Solve the following mental addition problems by calculating from left to right. To add 3-digit numbers,  First add the 100s, then the 10s, then the 1s. For 314 + 159,  first add 314 + 100 = 414. The problem is now simpler, 414 + 59; keep the 400 in mind and focus on 14 + 59. Add 14 + 50 = 64, then add 9 to get 73. The answer to the original problem is 473. For an added challenge, look away from the numbers after reading the problem."
              */
             let twoDigitOperandA = arc4random_uniform(99) + 1
             let twoDigitOperandB = arc4random_uniform(99) + 1
