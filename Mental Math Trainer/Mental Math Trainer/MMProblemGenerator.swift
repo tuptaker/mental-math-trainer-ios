@@ -28,9 +28,9 @@ class MMProblemGenerator {
             problem = self.generateLecture1Problem()
         case .lecture2:
             problem = self.generateLecture2Problem()
+        case .lecture3:
+            problem = self.generateLecture3Problem()
             /*
-             case .lecture3:
-             problem = self.generateLecture3Problem()
              case .lecture4:
              problem = self.generateLecture4Problem()
              case .lecture5:
@@ -427,12 +427,132 @@ class MMProblemGenerator {
         }
         return problem
     }
+    
+    private func generateLecture3Problem() -> MMProblem {
+        // There are 5 types of problem in Lecture 3, so we must randomly generate one from the 5 possible types
+        let lecture3ProblemType = arc4random_uniform(5) + 1
+        var expression = "Undefined expression: Lecture 3"
+        var result = UInt32(0)
+        var tipSheet = [
+            "2-by-1 multiplication problems can be calculated using the addition method or the subtraction method. To solve a multiplication problem using the addition method, you break the problem into sums of numbers. For example: 4 × 17 = (4 × 10) + (4 × 7) = 40 + 28 = 68. Another example would be 41 × 17 = (40 × 17) + (1 × 17) = 697. To solve using the subtraction method, you could consider 4 × 17 = 4 × (20 - 3) = (4 × 20) - (4 × 3) = 80 - 12 = 68. Again, with another example: 41 × 17 = 41 × (20 - 3) = (41 × 20) - (41 × 3) = 820 - 123 = 697  For a good mental workout, verify an answer by using one method first, and then trying with the other method to arrive at the same answer.",
+            "When dealing with 2-by-2 problems where one operand is divisible by 10, the problem is essentially a 2-by-1 problem with a 0 attached. In this case, just use the addition and/or subtraction methods for dealing with 2-by-1 problems, then append a zero to the result. For example: 40 × 17 = (4 × 10) + (4 × 7) = 40 + 28 = 68, with a zero appended = 680. For a good mental workout, verify an answer by using one method first, and then trying with the other method to arrive at the same answer.",
+            "3-by-1 multiplication problems are best done working from left to right. It helps to recite the answer as you are calculating from left to right. Either say it out loud or in your head - this will boost your memory. For example: 324 × 7 = 2100 + 140 + 28 = 2240 + 28 = 2268 or 'Twenty-one-hundred, plus one-hundred forty equals Two-thousand, two-hundred forty plus twenty-eight equals Twenty-two hundred and sixty-eight.",
+            "3-by-3 multiplication problems where one operand is divisible by 100 is essentially a 3-by-1 problem where you append two zeros at the end. For example, 404 × 400 = 404 x 4 = 1600 + 16 = 1616, with two zeros appended = 161,600.",
+            "When dealing with these 2-by-2 problems, use the factoring method to turn the problem into a 2-by-1 problem followed by a 2-by-1 or 3-by-1 problem. For example, 54 × 24 = 54 × 6 × 4 = (300 + 24) × 4 = 324 × 4 = 1200 + 80 + 16 = 1296."
+        ]
+        var problem = MMProblem(expressionText: expression, solution: Float(0.0), tipSheetText: tipSheet[Int(lecture3ProblemType) - 1], problemType: "standard")
+        
+        switch (lecture3ProblemType) {
+            /* 2-by-1 multiplication problems to exercise the addition and subtraction methods. */
+        case 1:
+            var twoDigitOperandA = UInt32(0)
+            var isFewerThanTwoDigits = true;
+
+            repeat {
+                twoDigitOperandA = arc4random_uniform(99) + 1
+                isFewerThanTwoDigits = twoDigitOperandA < 10
+            } while(isFewerThanTwoDigits)
+            
+            let oneDigitOperandB = arc4random_uniform(9) + 1
+            result = twoDigitOperandA * oneDigitOperandB
+            /* Randomize the order of appearance so we are comfortable working on problems regardless of how they are visualized. */
+            expression = "\(twoDigitOperandA) × \(oneDigitOperandB)"
+            let smallerIsFirst = arc4random_uniform(2)
+            if (smallerIsFirst == 1) {
+                expression = "\(oneDigitOperandB) × \(twoDigitOperandA)"
+            }
+            break
+        case 2:
+            var twoDigitOperandA = UInt32(0)
+            var isFewerThanTwoDigits = true;
+            
+            repeat {
+                twoDigitOperandA = arc4random_uniform(99) + 1
+                isFewerThanTwoDigits = twoDigitOperandA < 10
+            } while(isFewerThanTwoDigits)
+            
+            let twoDigitFactorOfTenOperandB = (arc4random_uniform(9) + 1) * 10
+            result = twoDigitOperandA * twoDigitFactorOfTenOperandB
+            /* Randomize the order of appearance so we are comfortable working on problems regardless of how they are visualized. */
+            expression = "\(twoDigitOperandA) × \(twoDigitFactorOfTenOperandB)"
+            let factorOfTenIsFirst = arc4random_uniform(2)
+            if (factorOfTenIsFirst == 1) {
+                expression = "\(twoDigitFactorOfTenOperandB) × \(twoDigitOperandA)"
+            }
+            break
+        case 3:
+            var threeDigitOperandA = UInt32(0)
+            var isFewerThanThreeDigits = true;
+            
+            repeat {
+                threeDigitOperandA = arc4random_uniform(999) + 1
+                isFewerThanThreeDigits = threeDigitOperandA < 100
+            } while(isFewerThanThreeDigits)
+            
+            let oneDigitOperandB = arc4random_uniform(9) + 1
+            result = threeDigitOperandA * oneDigitOperandB
+            /* Randomize the order of appearance so we are comfortable working on problems regardless of how they are visualized. */
+            expression = "\(threeDigitOperandA) × \(oneDigitOperandB)"
+            let oneDigitIsFirst = arc4random_uniform(2)
+            if (oneDigitIsFirst == 1) {
+                expression = "\(oneDigitOperandB) × \(threeDigitOperandA)"
+            }
+            break
+        case 4:
+            var threeDigitDivisibleByOneHundredOperandA = UInt32(0)
+            
+            var isFewerThanThreeDigits = true
+            var isNotDivisibleByOneHundred = true
+            repeat {
+                threeDigitDivisibleByOneHundredOperandA = arc4random_uniform(999) + 1
+                isFewerThanThreeDigits = threeDigitDivisibleByOneHundredOperandA < 100
+                if (!isFewerThanThreeDigits) {
+                    isNotDivisibleByOneHundred = threeDigitDivisibleByOneHundredOperandA % 100 > 0
+                }
+            } while(isFewerThanThreeDigits || isNotDivisibleByOneHundred)
+            
+            var threeDigitOperandB = arc4random_uniform(9) + 1
+
+            isFewerThanThreeDigits = true
+            repeat {
+                threeDigitOperandB = arc4random_uniform(999) + 1
+                isFewerThanThreeDigits = threeDigitOperandB < 100
+            } while (isFewerThanThreeDigits)
+            
+            result = threeDigitDivisibleByOneHundredOperandA * threeDigitOperandB
+            /* Randomize the order of appearance so we are comfortable working on problems regardless of how they are visualized. */
+            expression = "\(threeDigitDivisibleByOneHundredOperandA) × \(threeDigitOperandB)"
+            let operandBIsFirst = arc4random_uniform(2)
+            if (operandBIsFirst == 1) {
+                expression = "\(threeDigitOperandB) × \(threeDigitDivisibleByOneHundredOperandA)"
+            }
+            break
+        case 5:
+            var twoDigitOperandA = UInt32(0)
+            var twoDigitOperandB = UInt32(0)
+            var isLessThanTen = true
+            
+            repeat {
+                twoDigitOperandA = arc4random_uniform(99) + 1
+                isLessThanTen = twoDigitOperandA < 10
+            } while(isLessThanTen)
+            
+            isLessThanTen = true
+            repeat {
+                twoDigitOperandB = arc4random_uniform(99) + 1
+                isLessThanTen = twoDigitOperandB < 10
+            } while(isLessThanTen)
+            
+            result = twoDigitOperandA * twoDigitOperandB
+            expression = "\(twoDigitOperandA) × \(twoDigitOperandB)"
+            break
+        default:
+            break
+        }
+        problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText:tipSheet[Int(lecture3ProblemType) - 1], problemType: "standard")
+        return problem
+    }
     /*
-     private func generateLecture3Problem() -> MMProblem {
-     var problem = MMProblem(expressionText: "", solution: 0.0)
-     return problem
-     }
-     
      private func generateLecture4Problem() -> MMProblem {
      var problem = MMProblem(expressionText: "", solution: 0.0)
      return problem
