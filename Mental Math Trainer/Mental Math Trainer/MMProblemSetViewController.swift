@@ -16,17 +16,6 @@ class MMProblemSetViewController: MMBaseProblemViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDoneButtonOnKeyboard()
-
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            if (appDelegate.engine == nil)
-            {
-                print(appDelegate.engineErrorMessage!)
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
