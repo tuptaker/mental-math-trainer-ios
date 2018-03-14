@@ -1,0 +1,1 @@
+../../../../../EInkEngine/IInkUIReferenceImplementation/Classes/ViewControllers/CapturePointHelper.h
