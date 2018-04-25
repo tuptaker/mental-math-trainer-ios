@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B392AA220598BA200901954 /* MyCertificate.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B392AA020598BA200901954 /* MyCertificate.c */; };
+		4B392AB0205C5E2100901954 /* ATKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B392AA4205C5E2100901954 /* ATKCore.framework */; };
+		4B392AB7205C5E2100901954 /* ATKIMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B392AAB205C5E2100901954 /* ATKIMCommon.framework */; };
+		4B392AB8205C5E2100901954 /* ATKSingleLineWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B392AAC205C5E2100901954 /* ATKSingleLineWidget.framework */; };
+		4B392ABA205C5E2100901954 /* ATKText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B392AAE205C5E2100901954 /* ATKText.framework */; };
+		4B392ABF205C653200901954 /* resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B392ABE205C653200901954 /* resources.bundle */; };
+		4B392AC5205EC34400901954 /* ATKIMCommonResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B392AC4205EC34400901954 /* ATKIMCommonResources.bundle */; };
+		6CB96D614A71252C8349D0AB /* libPods-Mental Math Trainer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A438E2AAAE1EF61FD60561F /* libPods-Mental Math Trainer.a */; };
 		7D2136D31EE6346800A8C582 /* MMMultTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */; };
 		7D2136D41EE6346800A8C582 /* MMMultTableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */; };
 		7D28A3D81EEB5EDC00BD52F5 /* MMAnswerSubmitDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D28A3D71EEB5EDC00BD52F5 /* MMAnswerSubmitDialogViewController.swift */; };
@@ -31,6 +39,8 @@
 		7D7BAE261EE322FD0074D3A3 /* MMBaseProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE251EE322FD0074D3A3 /* MMBaseProblemViewController.swift */; };
 		7D7BAE281EE326E10074D3A3 /* MMEightByNineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE271EE326E10074D3A3 /* MMEightByNineViewController.swift */; };
 		7D7BAE2A1EE326F50074D3A3 /* MMElevenToNineteenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BAE291EE326F50074D3A3 /* MMElevenToNineteenViewController.swift */; };
+		8967B80EE948B9313B7D4C4A /* libPods-Mental Math TrainerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832C29DA6FC7968356CBDAB4 /* libPods-Mental Math TrainerUITests.a */; };
+		AAC5B72D36908368CBDD609E /* libPods-Mental Math TrainerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C528D677A3236937EC5BED4E /* libPods-Mental Math TrainerTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A438E2AAAE1EF61FD60561F /* libPods-Mental Math Trainer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mental Math Trainer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2068B5127CF6EB7B4F46047C /* Pods-Mental Math TrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mental Math TrainerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mental Math TrainerTests/Pods-Mental Math TrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A39DE9AF3013FD840298CF3 /* Pods-Mental Math Trainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mental Math Trainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mental Math Trainer/Pods-Mental Math Trainer.debug.xcconfig"; sourceTree = "<group>"; };
+		4B392A9F20598BA100901954 /* Mental Math Trainer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mental Math Trainer-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B392AA020598BA200901954 /* MyCertificate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MyCertificate.c; sourceTree = "<group>"; };
+		4B392AA120598BA200901954 /* MyCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCertificate.h; sourceTree = "<group>"; };
+		4B392AA4205C5E2100901954 /* ATKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKCore.framework; sourceTree = "<group>"; };
+		4B392AA5205C5E2100901954 /* ATKDiagramWidget.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKDiagramWidget.framework; sourceTree = "<group>"; };
+		4B392AA6205C5E2100901954 /* ATKGeometry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKGeometry.framework; sourceTree = "<group>"; };
+		4B392AA7205C5E2100901954 /* ATKDiagram.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKDiagram.framework; sourceTree = "<group>"; };
+		4B392AA8205C5E2100901954 /* ATKGeometryWidget.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKGeometryWidget.framework; sourceTree = "<group>"; };
+		4B392AAA205C5E2100901954 /* ATKSingleCharWidget.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKSingleCharWidget.framework; sourceTree = "<group>"; };
+		4B392AAB205C5E2100901954 /* ATKIMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKIMCommon.framework; sourceTree = "<group>"; };
+		4B392AAC205C5E2100901954 /* ATKSingleLineWidget.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKSingleLineWidget.framework; sourceTree = "<group>"; };
+		4B392AAD205C5E2100901954 /* ATKMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKMath.framework; sourceTree = "<group>"; };
+		4B392AAE205C5E2100901954 /* ATKText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKText.framework; sourceTree = "<group>"; };
+		4B392AAF205C5E2100901954 /* ATKMathWidget.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKMathWidget.framework; sourceTree = "<group>"; };
+		4B392ABE205C653200901954 /* resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = resources.bundle; path = "Mental Math Trainer/resources.bundle"; sourceTree = "<group>"; };
+		4B392AC0205C676A00901954 /* ATKSharedUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKSharedUI.framework; sourceTree = "<group>"; };
+		4B392AC1205C676A00901954 /* ATKSharedUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ATKSharedUI.bundle; sourceTree = "<group>"; };
+		4B392AC4205EC34400901954 /* ATKIMCommonResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ATKIMCommonResources.bundle; path = "Mental Math Trainer/ATKIMCommonResources.bundle"; sourceTree = "<group>"; };
 		7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMMultTableCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMMultTableCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D28A3D71EEB5EDC00BD52F5 /* MMAnswerSubmitDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMAnswerSubmitDialogViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +112,12 @@
 		7D7BAE251EE322FD0074D3A3 /* MMBaseProblemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMBaseProblemViewController.swift; sourceTree = "<group>"; };
 		7D7BAE271EE326E10074D3A3 /* MMEightByNineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMEightByNineViewController.swift; sourceTree = "<group>"; };
 		7D7BAE291EE326F50074D3A3 /* MMElevenToNineteenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMElevenToNineteenViewController.swift; sourceTree = "<group>"; };
+		8218DE1EB91D4503EABD76D9 /* Pods-Mental Math TrainerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mental Math TrainerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mental Math TrainerUITests/Pods-Mental Math TrainerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		832C29DA6FC7968356CBDAB4 /* libPods-Mental Math TrainerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mental Math TrainerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6094C470BEC86FDC7FAB51 /* Pods-Mental Math Trainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mental Math Trainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mental Math Trainer/Pods-Mental Math Trainer.release.xcconfig"; sourceTree = "<group>"; };
+		C528D677A3236937EC5BED4E /* libPods-Mental Math TrainerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mental Math TrainerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C878E7CBEAD246A31C0CC67F /* Pods-Mental Math TrainerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mental Math TrainerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mental Math TrainerTests/Pods-Mental Math TrainerTests.release.xcconfig"; sourceTree = "<group>"; };
+		CFD5A2E920D084DAF8358360 /* Pods-Mental Math TrainerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mental Math TrainerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mental Math TrainerUITests/Pods-Mental Math TrainerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +125,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B392AB7205C5E2100901954 /* ATKIMCommon.framework in Frameworks */,
+				4B392ABA205C5E2100901954 /* ATKText.framework in Frameworks */,
+				4B392AB8205C5E2100901954 /* ATKSingleLineWidget.framework in Frameworks */,
+				6CB96D614A71252C8349D0AB /* libPods-Mental Math Trainer.a in Frameworks */,
+				4B392AB0205C5E2100901954 /* ATKCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC5B72D36908368CBDD609E /* libPods-Mental Math TrainerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +145,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8967B80EE948B9313B7D4C4A /* libPods-Mental Math TrainerUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B392A9E20598B5600901954 /* MyScriptCertificate */ = {
+			isa = PBXGroup;
+			children = (
+				4B392AA020598BA200901954 /* MyCertificate.c */,
+				4B392AA120598BA200901954 /* MyCertificate.h */,
+			);
+			name = MyScriptCertificate;
+			sourceTree = "<group>";
+		};
+		4B392AA3205C5C1F00901954 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				4B392AC1205C676A00901954 /* ATKSharedUI.bundle */,
+				4B392AC0205C676A00901954 /* ATKSharedUI.framework */,
+				4B392AA4205C5E2100901954 /* ATKCore.framework */,
+				4B392AA7205C5E2100901954 /* ATKDiagram.framework */,
+				4B392AA5205C5E2100901954 /* ATKDiagramWidget.framework */,
+				4B392AA6205C5E2100901954 /* ATKGeometry.framework */,
+				4B392AA8205C5E2100901954 /* ATKGeometryWidget.framework */,
+				4B392AAB205C5E2100901954 /* ATKIMCommon.framework */,
+				4B392AAD205C5E2100901954 /* ATKMath.framework */,
+				4B392AAF205C5E2100901954 /* ATKMathWidget.framework */,
+				4B392AAA205C5E2100901954 /* ATKSingleCharWidget.framework */,
+				4B392AAC205C5E2100901954 /* ATKSingleLineWidget.framework */,
+				4B392AAE205C5E2100901954 /* ATKText.framework */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		7D2136D51EE6347300A8C582 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +193,15 @@
 		7D640BF31ED84BCD00F7D87C = {
 			isa = PBXGroup;
 			children = (
+				4B392AC4205EC34400901954 /* ATKIMCommonResources.bundle */,
+				4B392ABE205C653200901954 /* resources.bundle */,
+				4B392AA3205C5C1F00901954 /* Libraries */,
 				7D640BFE1ED84BCD00F7D87C /* Mental Math Trainer */,
 				7D640C161ED84BCD00F7D87C /* Mental Math TrainerTests */,
 				7D640C211ED84BCD00F7D87C /* Mental Math TrainerUITests */,
 				7D640BFD1ED84BCD00F7D87C /* Products */,
+				CED1204618B0C1A750D51774 /* Pods */,
+				E89770770A32656E3DB9EDA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +218,8 @@
 		7D640BFE1ED84BCD00F7D87C /* Mental Math Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				4B392A9F20598BA100901954 /* Mental Math Trainer-Bridging-Header.h */,
+				4B392A9E20598B5600901954 /* MyScriptCertificate */,
 				7D2136D51EE6347300A8C582 /* Views */,
 				7D7BAE121ED9A3D00074D3A3 /* ViewControllers */,
 				7D640BFF1ED84BCD00F7D87C /* AppDelegate.swift */,
@@ -192,6 +272,29 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		CED1204618B0C1A750D51774 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A39DE9AF3013FD840298CF3 /* Pods-Mental Math Trainer.debug.xcconfig */,
+				8B6094C470BEC86FDC7FAB51 /* Pods-Mental Math Trainer.release.xcconfig */,
+				2068B5127CF6EB7B4F46047C /* Pods-Mental Math TrainerTests.debug.xcconfig */,
+				C878E7CBEAD246A31C0CC67F /* Pods-Mental Math TrainerTests.release.xcconfig */,
+				CFD5A2E920D084DAF8358360 /* Pods-Mental Math TrainerUITests.debug.xcconfig */,
+				8218DE1EB91D4503EABD76D9 /* Pods-Mental Math TrainerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E89770770A32656E3DB9EDA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A438E2AAAE1EF61FD60561F /* libPods-Mental Math Trainer.a */,
+				C528D677A3236937EC5BED4E /* libPods-Mental Math TrainerTests.a */,
+				832C29DA6FC7968356CBDAB4 /* libPods-Mental Math TrainerUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,9 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D640C271ED84BCD00F7D87C /* Build configuration list for PBXNativeTarget "Mental Math Trainer" */;
 			buildPhases = (
+				9A9D8B2EABAAE27298F8582F /* [CP] Check Pods Manifest.lock */,
 				7D640BF81ED84BCD00F7D87C /* Sources */,
 				7D640BF91ED84BCD00F7D87C /* Frameworks */,
 				7D640BFA1ED84BCD00F7D87C /* Resources */,
+				DCECB8AED822B1E27C105EC1 /* [CP] Embed Pods Frameworks */,
+				F63E5770C4073ADAF972048C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D640C2A1ED84BCD00F7D87C /* Build configuration list for PBXNativeTarget "Mental Math TrainerTests" */;
 			buildPhases = (
+				31F22C16AA41E9ABC4E8BCF9 /* [CP] Check Pods Manifest.lock */,
 				7D640C0F1ED84BCD00F7D87C /* Sources */,
 				7D640C101ED84BCD00F7D87C /* Frameworks */,
 				7D640C111ED84BCD00F7D87C /* Resources */,
+				C2495C45B7D69A57463514B5 /* [CP] Embed Pods Frameworks */,
+				5060B17038ABC6DEA5C43E45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +343,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D640C2D1ED84BCD00F7D87C /* Build configuration list for PBXNativeTarget "Mental Math TrainerUITests" */;
 			buildPhases = (
+				4E554CDDACA808DB06A40B07 /* [CP] Check Pods Manifest.lock */,
 				7D640C1A1ED84BCD00F7D87C /* Sources */,
 				7D640C1B1ED84BCD00F7D87C /* Frameworks */,
 				7D640C1C1ED84BCD00F7D87C /* Resources */,
+				1440917827406C5033624030 /* [CP] Embed Pods Frameworks */,
+				AC3615C36AEF867327AABD31 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +373,7 @@
 					7D640BFB1ED84BCD00F7D87C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = HW7KXG8JJS;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					7D640C121ED84BCD00F7D87C = {
@@ -300,10 +413,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B392ABF205C653200901954 /* resources.bundle in Resources */,
 				7D640C0D1ED84BCD00F7D87C /* LaunchScreen.storyboard in Resources */,
 				7D640C0A1ED84BCD00F7D87C /* Assets.xcassets in Resources */,
 				7D640C051ED84BCD00F7D87C /* Main.storyboard in Resources */,
 				7D2136D41EE6346800A8C582 /* MMMultTableCollectionViewCell.xib in Resources */,
+				4B392AC5205EC34400901954 /* ATKIMCommonResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +438,153 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1440917827406C5033624030 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mental Math TrainerUITests/Pods-Mental Math TrainerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31F22C16AA41E9ABC4E8BCF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mental Math TrainerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E554CDDACA808DB06A40B07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mental Math TrainerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5060B17038ABC6DEA5C43E45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mental Math TrainerTests/Pods-Mental Math TrainerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A9D8B2EABAAE27298F8582F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mental Math Trainer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC3615C36AEF867327AABD31 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mental Math TrainerUITests/Pods-Mental Math TrainerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2495C45B7D69A57463514B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mental Math TrainerTests/Pods-Mental Math TrainerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCECB8AED822B1E27C105EC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mental Math Trainer/Pods-Mental Math Trainer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F63E5770C4073ADAF972048C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mental Math Trainer/Pods-Mental Math Trainer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D640BF81ED84BCD00F7D87C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -337,6 +599,7 @@
 				7D7BAE241EE322B80074D3A3 /* MMTenByTenViewController.swift in Sources */,
 				7D7BAE1E1EDE1C1C0074D3A3 /* MMProblemViewController.swift in Sources */,
 				7D28A3D81EEB5EDC00BD52F5 /* MMAnswerSubmitDialogViewController.swift in Sources */,
+				4B392AA220598BA200901954 /* MyCertificate.c in Sources */,
 				7D7BAE261EE322FD0074D3A3 /* MMBaseProblemViewController.swift in Sources */,
 				7D7BAE201EDE1C5E0074D3A3 /* MMProblemContainerViewController.swift in Sources */,
 				7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */,
@@ -497,32 +760,60 @@
 		};
 		7D640C281ED84BCD00F7D87C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A39DE9AF3013FD840298CF3 /* Pods-Mental Math Trainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HW7KXG8JJS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				INFOPLIST_FILE = "Mental Math Trainer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mobile.tuptakemedia.Mental-Math-Trainer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mental Math Trainer/Mental Math Trainer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
 		7D640C291ED84BCD00F7D87C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B6094C470BEC86FDC7FAB51 /* Pods-Mental Math Trainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HW7KXG8JJS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				INFOPLIST_FILE = "Mental Math Trainer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mobile.tuptakemedia.Mental-Math-Trainer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mental Math Trainer/Mental Math Trainer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
 		7D640C2B1ED84BCD00F7D87C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2068B5127CF6EB7B4F46047C /* Pods-Mental Math TrainerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,6 +828,7 @@
 		};
 		7D640C2C1ED84BCD00F7D87C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C878E7CBEAD246A31C0CC67F /* Pods-Mental Math TrainerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -551,6 +843,7 @@
 		};
 		7D640C2E1ED84BCD00F7D87C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFD5A2E920D084DAF8358360 /* Pods-Mental Math TrainerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Mental Math TrainerUITests/Info.plist";
@@ -564,6 +857,7 @@
 		};
 		7D640C2F1ED84BCD00F7D87C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8218DE1EB91D4503EABD76D9 /* Pods-Mental Math TrainerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Mental Math TrainerUITests/Info.plist";

@@ -30,9 +30,9 @@ class MMProblemGenerator {
             problem = self.generateLecture2Problem()
         case .lecture3:
             problem = self.generateLecture3Problem()
-            /*
              case .lecture4:
              problem = self.generateLecture4Problem()
+            /*
              case .lecture5:
              problem = self.generateLecture5Problem()
              case .lecture6:
@@ -552,12 +552,63 @@ class MMProblemGenerator {
         problem = MMProblem(expressionText: expression, solution: Float(result), tipSheetText:tipSheet[Int(lecture3ProblemType) - 1], problemType: "standard")
         return problem
     }
+    
+    private func generateLecture4Problem() -> MMProblem {
+        // There are 10 types of problem in Lecture 4, so we must randomly generate one from the 5 possible types
+        let lecture4ProblemType = arc4random_uniform(10) + 1
+        var expression = "Undefined expression: Lecture 4"
+        var result = UInt32(0)
+        var tipSheet = [
+            "A number is divisible by 2 only if it ends in 0, 2, 4, 6, or 8.",
+            "A number is divisible by 3 if and only if the sum of its digits are divisible by 3. For example, 1234 is not a multiple of 3 since 1 + 2 + 3 + 4 = 10, which is not divisible by 3. However, 12345 is divisible by 3 since 1 + 2 + 3 + 4 + 5 = 15, which is 3 × 5.",
+            "A number is divislble by 4 if the last 2 digits are 00 or a multiple of 4. For example, 271828 is a multiple of 4 because the last 2 digits - 28 - are a multiple of 4: 4 × 7 = 28.",
+            "A number is divisible by 5 only if it ends in 0 or 5.",
+            "A number is divisible by 6 when it is divisible by both 2 and 3. For example, 474 is divisble by 2 since we recall the rule for determining divisibility by 2 which states that if the number ends in 0, 2, 4, 6, or 8, then it is divisible by 2. In this case, it ends in 4. The number 474 is divisible by 3 since we then recall the rule for determining divisibility by 3 which states a number is divisible by 3 if the sum of its digits are divisible by 3. In this case, 4 + 7 + 4 = 15, which is divisible by 3. Therefore, it follows that 474 is thus divisible by 6, since it is also divisible by 2 and 3.",
+            "To determine if a number is divisible by 7, a few tricks can be used. One trick goes as follows: (1) remove the last digit of the number (2) double this number (3) subtract it from the rest of the number. If the result is divisible by 7, then the number itself is divisible by 7. If the result is too large to determine by quick inspection that it is divisible by 7, you can run the algorithm again. For example, is 112 divisible by 7? (1) remove 2 and (2) double it to get 4. (3) Subtract 4 from 11 to get 7. Is 7 divisible by 7? Of course it is, therefore, it follows 112 is divisible by 7. Another example: is 2345 divisible by 7? Apply the algorithm: (1) remove 5 and (2) double it to get 10. (3) Subtract 10 from 234 to get 224. Is 224 divisible by 7? We're not sure, so we run the algorithm again on this result: (1) remove the last digit 4 and (2) double it to get 8, then (3) subtract 8 from 22 to get 14. Is 14 divisible by 7? Of course it is, hence it follows that 224 is divisible by 7. Another way to determine if a number is divisible by 7 is by using the 'Create a Zero, Kill a Zero' rule, which might be easier to remember. This method works as follows: is 1234 divisible by 7? (1) subtract or add multiple of 7 that will cause the result to end in 0...14 works...1234 - 14 = 1220. (2) We created a zero here, note 122'0'. (3) Now we 'kill' the zero to get 122. (4) Now ask, is 122 divisible by 7? We're not sure, so we repeat the algorithm: (1) 28 is a multiple of 7, so add that to 122 to get 150. (2) We created a zero! 15'0'. (3) Again, 'kill' the zero to get 15. (4) Is 15 a multiple of 7? Nope. Therefore, 2345 is not divisible by 7.",
+            "A number is divisible by 8 if the last 3 digits are a multiple of 8. For example, 123456 is divislbe by 8 since 456 - the last 3 digits - is a multiple of 8: 8 × 57 = 456. Conversely, if the last 2 digits are not a multiple of 4, then the number cannot be divisible by 8. Take for example, 31415926. This number is not divisible by 8 since 26 - the last 2 digits - is not a multiple of 4, therefore, 31415926 is not divisible by 8.",
+            "A number is divisible by 9 if and only if the sum of its digits are divisible by 9. For example, 2358 is a multiple of 9 because 2 + 3 + 5 + 8 = 18, which is 2 × 9.",
+            "A number is divisible by 10 if and only if it ends in 0",
+            "A number is divisible by 11 if and only if when you alternately subtract and add the digits, you get a 0 or a multiple of 11. For example, 843689 is a multiple of 11 since 8 - 4 + 3 - 6 + 8 - 9 = 0.",
+            "A number is divisible by 12 if it is divisible by both 3 and 4. For example, the number 948 is divisible by 12. By recalling the rule for determining divisibility of 3 which states that a number is divisible by 3 if the sum of its digits is divisible by 3, we determine that 948 is divisible by 3 since 9 + 4 + 8 = 21, which is 3 × 7. Thus 948 is divisible by 3. Next, we recall that the rule for determining divisibility of 4 which states that a number is divisible by 4 the last 2 digits of the number are a multiple of 4. In this case, 948 is divisible by 4 since 48 is 4 × 12. Therefore, since 948 is divisible by both 3 and 4, it follows that 948 is divisible by 12.",
+            "The Create a Zero / Kill a Zero Rule for Odd Numbers not Equal to 5. Can be described in this example: is 1234 divisible by 7? (1) subtract or add multiple of 7 that will cause the result to end in 0...14 works...1234 - 14 = 1220. (2) We created a zero here, note 122'0'. (3) Now we 'kill' the zero to get 122. (4) Now ask, is 122 divisible by 7? We're not sure, so we repeat the algorithm: (1) 28 is a multiple of 7, so add that to 122 to get 150. (2) We created a zero! 15'0'. (3) Again, 'kill' the zero to get 15. (4) Is 15 a multiple of 7? Nope. Therefore, 2345 is not divisible by 7. This algorithm can be generalized and applied to odd numbers not equal to 5. Just replace 7 in the prior example with the number in question to determine divisibility for it.",
+            "Divide a 3 or 4 digit number by a 1 digit number",
+            "Divide a 3 or 4 digit number by a 2 digit number",
+            "Using the Overshooting Technique To Divide 3 and 4 digit numbers by 1 and 2 digit numbers.",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+        ]
+        var problem = MMProblem(expressionText: expression, solution: Float(0.0), tipSheetText: tipSheet[Int(lecture4ProblemType) - 1], problemType: "standard")
+        
+        switch (lecture4ProblemType) {
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        case 4:
+            break
+        case 5:
+            break
+        case 6:
+            break
+        case 7:
+            break
+        case 8:
+            break
+        case 9:
+            break
+        case 10:
+            break
+        default:
+            break
+        }
+        return problem
+    }
     /*
-     private func generateLecture4Problem() -> MMProblem {
-     var problem = MMProblem(expressionText: "", solution: 0.0)
-     return problem
-     }
-     
      private func generateLecture5Problem() -> MMProblem {
      var problem = MMProblem(expressionText: "", solution: 0.0)
      return problem
