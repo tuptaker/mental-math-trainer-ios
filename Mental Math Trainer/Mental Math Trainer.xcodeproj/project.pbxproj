@@ -14,6 +14,7 @@
 		4B392ABA205C5E2100901954 /* ATKText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B392AAE205C5E2100901954 /* ATKText.framework */; };
 		4B392ABF205C653200901954 /* resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B392ABE205C653200901954 /* resources.bundle */; };
 		4B392AC5205EC34400901954 /* ATKIMCommonResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B392AC4205EC34400901954 /* ATKIMCommonResources.bundle */; };
+		4BF2D20521987D9D00C46F73 /* MMTrueOrFalseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF2D20421987D9D00C46F73 /* MMTrueOrFalseViewController.swift */; };
 		6CB96D614A71252C8349D0AB /* libPods-Mental Math Trainer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A438E2AAAE1EF61FD60561F /* libPods-Mental Math Trainer.a */; };
 		7D2136D31EE6346800A8C582 /* MMMultTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */; };
 		7D2136D41EE6346800A8C582 /* MMMultTableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */; };
@@ -82,6 +83,7 @@
 		4B392AC0205C676A00901954 /* ATKSharedUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKSharedUI.framework; sourceTree = "<group>"; };
 		4B392AC1205C676A00901954 /* ATKSharedUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ATKSharedUI.bundle; sourceTree = "<group>"; };
 		4B392AC4205EC34400901954 /* ATKIMCommonResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ATKIMCommonResources.bundle; path = "Mental Math Trainer/ATKIMCommonResources.bundle"; sourceTree = "<group>"; };
+		4BF2D20421987D9D00C46F73 /* MMTrueOrFalseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMTrueOrFalseViewController.swift; sourceTree = "<group>"; };
 		7D2136D11EE6346800A8C582 /* MMMultTableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMMultTableCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D2136D21EE6346800A8C582 /* MMMultTableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMMultTableCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D28A3D71EEB5EDC00BD52F5 /* MMAnswerSubmitDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMAnswerSubmitDialogViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				7D7BAE271EE326E10074D3A3 /* MMEightByNineViewController.swift */,
 				7D7BAE291EE326F50074D3A3 /* MMElevenToNineteenViewController.swift */,
 				7D28A3D71EEB5EDC00BD52F5 /* MMAnswerSubmitDialogViewController.swift */,
+				4BF2D20421987D9D00C46F73 /* MMTrueOrFalseViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				7D640C021ED84BCD00F7D87C /* ViewController.swift in Sources */,
 				7D7BAE281EE326E10074D3A3 /* MMEightByNineViewController.swift in Sources */,
 				7D2136D31EE6346800A8C582 /* MMMultTableCollectionViewCell.swift in Sources */,
+				4BF2D20521987D9D00C46F73 /* MMTrueOrFalseViewController.swift in Sources */,
 				7D7BAE161EDB164E0074D3A3 /* MMEnumCounterProtocol.swift in Sources */,
 				7D7BAE1A1EDB87E10074D3A3 /* MMProblemGenerator.swift in Sources */,
 				7D640C001ED84BCD00F7D87C /* AppDelegate.swift in Sources */,

@@ -34,4 +34,10 @@ class MMBaseProblemViewController: UIViewController {
     
     func updateVisualizationForCurrentAnswers() {
     }
+    @IBAction func showTipSheetForThisProblemSet(_ sender: UIButton) {
+        print("showTIpSheetForThisProblemSet called in nMMBaseProblemViewController")
+        if let parentVC = self.parent as? MMProblemContainerViewController, let tipText = self.currentProblem?.tipSheetText {
+            parentVC.showTipSheet(tipVerbiage: tipText)
+        }
+    }
 }

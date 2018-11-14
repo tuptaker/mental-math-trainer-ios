@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ac-xi-MaP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ac-xi-MaP">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -164,7 +164,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Tip Sheet"/>
                                 <connections>
-                                    <action selector="showTipSheetForThisProblemSet:" destination="3n5-Rf-RVh" eventType="touchUpInside" id="fOM-eM-i29"/>
+                                    <action selector="showTipSheetForThisProblemSet:" destination="3n5-Rf-RVh" eventType="touchUpInside" id="846-N0-rrA"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2K-Mb-CHO" customClass="SLTWSingleLineWidget">
@@ -317,7 +317,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Tip Sheet"/>
                                 <connections>
-                                    <action selector="showTipSheetForThisProblemSet:" destination="IUf-g8-P12" eventType="touchUpInside" id="9L6-ue-sxc"/>
+                                    <action selector="showTipSheetForThisProblemSet:" destination="IUf-g8-P12" eventType="touchUpInside" id="6By-5M-OjE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -370,7 +370,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Tip Sheet"/>
                                 <connections>
-                                    <action selector="showTipSheetForThisProblemSet:" destination="PJ1-fy-6Y3" eventType="touchUpInside" id="XGX-kD-iwQ"/>
+                                    <action selector="showTipSheetForThisProblemSet:" destination="PJ1-fy-6Y3" eventType="touchUpInside" id="EhQ-SK-VrA"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lva-sQ-EyU">
@@ -503,7 +503,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Tip Sheet"/>
                                 <connections>
-                                    <action selector="showTipSheetForProblemSet:" destination="db4-pQ-KJj" eventType="touchUpInside" id="2U2-k9-YxZ"/>
+                                    <action selector="showTipSheetForThisProblemSet:" destination="db4-pQ-KJj" eventType="touchUpInside" id="cbI-io-Gft"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -612,11 +612,91 @@
                         <segue destination="PJ1-fy-6Y3" kind="custom" identifier="embedEightByNineTable" customClass="MMEmptySegue" customModule="Mental_Math_Trainer" customModuleProvider="target" id="lUB-Q6-yYi"/>
                         <segue destination="db4-pQ-KJj" kind="custom" identifier="embedElevenToNineteenTable" customClass="MMEmptySegue" customModule="Mental_Math_Trainer" customModuleProvider="target" id="fvp-J5-dau"/>
                         <segue destination="AOD-Wl-Vy0" kind="presentation" identifier="showTipSheet" modalTransitionStyle="flipHorizontal" id="7pG-1g-FJ1"/>
+                        <segue destination="t8M-Fg-JT2" kind="custom" identifier="embedTrueOrFalse" customClass="MMEmptySegue" customModule="Mental_Math_Trainer" customModuleProvider="target" id="Pe9-CP-eHA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UD2-ge-Iwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3298" y="524"/>
+        </scene>
+        <!--True Or False View Controller-->
+        <scene sceneID="BHA-Gy-jFx">
+            <objects>
+                <viewController id="t8M-Fg-JT2" customClass="MMTrueOrFalseViewController" customModule="Mental_Math_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kQx-ae-hl8"/>
+                        <viewControllerLayoutGuide type="bottom" id="6mz-U6-ReM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bp5-c5-iv5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-NP-cmq">
+                                <rect key="frame" x="0.0" y="104" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8160979151725769" green="0.99284499883651733" blue="0.94117456674575806" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6X5-ci-Gko">
+                                <rect key="frame" x="0.0" y="155" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82428830070000003" green="1" blue="0.63483768129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-kJ-MC5">
+                                <rect key="frame" x="14" y="412" width="130" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="True">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK0-Cp-tll">
+                                <rect key="frame" x="174" y="464" width="130" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Check Answer">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46w-KV-wr1">
+                                <rect key="frame" x="14" y="516" width="292" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.096921540799999997" green="0.64894700049999998" blue="0.33156365160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Next Problem"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nen-bW-sBG">
+                                <rect key="frame" x="14" y="464" width="130" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Tip Sheet"/>
+                                <connections>
+                                    <action selector="showTipSheetForThisProblemSet:" destination="t8M-Fg-JT2" eventType="touchUpInside" id="7bk-GY-f1T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjP-WC-g2k">
+                                <rect key="frame" x="174" y="412" width="130" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="False">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRj-6h-rIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3652.5" y="-254.57746478873239"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -35,12 +35,6 @@ class MMTenByTenViewController: MMBaseProblemViewController, UICollectionViewDat
         }
     }
     
-    @IBAction func showTipSheetForThisProblemSet(_ sender: UIButton) {
-        if let parentVC = self.parent as? MMProblemContainerViewController, let tipText = self.currentProblem?.tipSheetText {
-            parentVC.showTipSheet(tipVerbiage: tipText)
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 11
     }

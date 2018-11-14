@@ -584,6 +584,13 @@ class MMProblemGenerator {
         
         switch (lecture4ProblemType) {
         case 1:
+            var someNumThatMightBeEven = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is even
+            let shouldMakeItEven = arc4random_uniform(2)
+            if (someNumThatMightBeEven % 2 != 0 && shouldMakeItEven == 1) {
+                /* the generated number is not even but we want to make it even */
+                someNumThatMightBeEven = someNumThatMightBeEven * 2;
+            }
             break
         case 2:
             break

@@ -11,6 +11,7 @@ var standardProblemSetSegueID = "embedStandardProblems"
 var tenByTenMultTableSegueID = "embedTenByTenTable"
 var eightByNineTableSegueID = "embedEightByNineTable"
 var elevenToNineteenTableSegueID = "embedElevenToNineteenTable"
+var trueOrFalseSegueID = "embedTrueOrFalse"
 
 class MMProblemContainerViewController: UIViewController {
     var currentSegueIdentifier = standardProblemSetSegueID
@@ -81,6 +82,16 @@ class MMProblemContainerViewController: UIViewController {
                 segue.destination.didMove(toParentViewController: self)
             }
             break
+        case trueOrFalseSegueID:
+            if (self.childViewControllers.count > 0) {
+                self.switchToViewController(destination: segue.destination, origin: self.childViewControllers[0])
+            } else {
+                self.addChildViewController(segue.destination)
+                segue.destination.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
+                self.view.addSubview(segue.destination.view)
+                segue.destination.didMove(toParentViewController: self)
+            }
+            break
         default:
             break
         }
@@ -107,6 +118,8 @@ class MMProblemContainerViewController: UIViewController {
             self.currentSegueIdentifier = eightByNineTableSegueID
         case "elevenToNineteenTable":
             self.currentSegueIdentifier = elevenToNineteenTableSegueID
+        case "trueOrFalse":
+            self.currentSegueIdentifier = trueOrFalseSegueID
         default:
             self.currentSegueIdentifier = standardProblemSetSegueID
         }

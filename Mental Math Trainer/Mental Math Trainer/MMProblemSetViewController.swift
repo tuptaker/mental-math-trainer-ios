@@ -85,13 +85,6 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
         }
     }
     
-    @IBAction func showTipSheetForThisProblemSet(_ sender: UIButton) {
-        self.doneButtonAction()
-        if let parentVC = self.parent as? MMProblemContainerViewController, let tipText = self.currentProblem?.tipSheetText {
-            parentVC.showTipSheet(tipVerbiage: tipText)
-        }
-    }
-    
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         doneToolbar.barStyle       = UIBarStyle.default
