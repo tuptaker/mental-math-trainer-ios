@@ -107,6 +107,7 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
     
     func updateProblemLabels() {
         self.problemLabel.text = self.currentProblem?.expressionText
+        self.answerLabel.text = ""
     }
     
     func addDashedBorderToHandwritingField() {
@@ -123,6 +124,7 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
     @IBAction func clearAnswer(_ sender: UIButton) {
         self.solutionField.text = ""
         self.handwrittenTextField.clear()
+        self.answerLabel.text = ""
     }
     
     // MARK: SLTWSingleLineWidgetDelegate
