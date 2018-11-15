@@ -23,15 +23,37 @@ class MMProblemGenerator {
         var problem = MMProblem(expressionText: "", solution: 0.0, tipSheetText: "", problemType: "")
         switch problemCategory {
         case .allLectures:
-            problem = self.generateLecture1Problem()
+            // randomly choose a lecture from the 4 (that are currently implemented)
+            let randomLectureNumber = Category(rawValue:Int(arc4random_uniform(3) + 1))!
+            switch randomLectureNumber {
+            case .lecture1:
+                problem = self.generateLecture1Problem()
+                break
+            case .lecture2:
+                problem = self.generateLecture2Problem()
+                break
+            case .lecture3:
+                problem = self.generateLecture3Problem()
+                break
+            case.lecture4:
+                problem = self.generateLecture4Problem()
+                break
+            default:
+                problem = self.generateLecture1Problem()
+                break
+            }
         case .lecture1:
             problem = self.generateLecture1Problem()
+            break
         case .lecture2:
             problem = self.generateLecture2Problem()
+            break
         case .lecture3:
             problem = self.generateLecture3Problem()
-             case .lecture4:
-             problem = self.generateLecture4Problem()
+            break
+        case .lecture4:
+            problem = self.generateLecture4Problem()
+            break
             /*
              case .lecture5:
              problem = self.generateLecture5Problem()
@@ -55,7 +77,6 @@ class MMProblemGenerator {
         }
         return problem
     }
-    
     
     /********* Lecture 1 *********/
     private func generateLecture1Problem() -> MMProblem {
@@ -447,7 +468,7 @@ class MMProblemGenerator {
         case 1:
             var twoDigitOperandA = UInt32(0)
             var isFewerThanTwoDigits = true;
-
+            
             repeat {
                 twoDigitOperandA = arc4random_uniform(99) + 1
                 isFewerThanTwoDigits = twoDigitOperandA < 10
@@ -512,7 +533,7 @@ class MMProblemGenerator {
             } while(isFewerThanThreeDigits || isNotDivisibleByOneHundred)
             
             var threeDigitOperandB = arc4random_uniform(9) + 1
-
+            
             isFewerThanThreeDigits = true
             repeat {
                 threeDigitOperandB = arc4random_uniform(999) + 1
