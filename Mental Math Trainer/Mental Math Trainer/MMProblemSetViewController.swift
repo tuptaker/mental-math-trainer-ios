@@ -21,7 +21,7 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
         self.addDashedBorderToHandwritingField()
         if self.isMSCertRegistered == false {
             let cert = NSData(bytes: myCertificate.bytes, length: myCertificate.length)
-            self.isMSCertRegistered = self.handwrittenTextField.registerCertificate(cert as Data!)
+            self.isMSCertRegistered = self.handwrittenTextField.registerCertificate(cert as Data?)
             let registrationLogMsg = self.isMSCertRegistered ? "ATK registered" : "ATK not registered"
             print(registrationLogMsg)
         }
