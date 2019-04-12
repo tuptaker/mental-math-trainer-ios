@@ -88,8 +88,8 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         doneToolbar.barStyle       = UIBarStyle.default
-        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(MMProblemSetViewController.doneButtonAction))
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(MMProblemSetViewController.doneButtonAction))
         
         var items = [UIBarButtonItem]()
         items.append(flexSpace)
@@ -101,7 +101,7 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
         self.solutionField.inputAccessoryView = doneToolbar
     }
     
-    func doneButtonAction() {
+    @objc func doneButtonAction() {
         self.solutionField.resignFirstResponder()
     }
     
@@ -111,7 +111,7 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
     }
     
     func addDashedBorderToHandwritingField() {
-        var dashedBorder = CAShapeLayer()
+        let dashedBorder = CAShapeLayer()
         dashedBorder.strokeColor = UIColor.black.cgColor
         dashedBorder.lineWidth = 3
         dashedBorder.lineDashPattern = [4, 4]
@@ -131,7 +131,7 @@ class MMProblemSetViewController: MMBaseProblemViewController,SLTWSingleLineWidg
     // - (void)singleLineWidget:(SLTWSingleLineWidget *)sender didChangeText:(NSString*)text intermediate:(BOOL)intermediate {
     
     func singleLineWidget(_ sender: SLTWSingleLineWidget!, didChangeText text: String!, intermediate: Bool) {
-        print("Widget did change text: \(text)")
+        print("Widget did change text: \(String(describing: text))")
         self.solutionField.text = text
 //        self.handwrittenTextField.clear()
     }

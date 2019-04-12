@@ -43,53 +43,53 @@ class MMProblemContainerViewController: UIViewController {
         }
         switch segue.identifier! {
         case standardProblemSetSegueID:
-            if (self.childViewControllers.count > 0) {
-                self.switchToViewController(destination: segue.destination, origin: self.childViewControllers[0])
+            if (self.children.count > 0) {
+                self.switchToViewController(destination: segue.destination, origin: self.children[0])
             } else {
-                self.addChildViewController(segue.destination)
+                self.addChild(segue.destination)
                 segue.destination.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
                 self.view.addSubview(segue.destination.view)
-                segue.destination.didMove(toParentViewController: self)
+                segue.destination.didMove(toParent: self)
             }
             break
         case tenByTenMultTableSegueID:
-            if (self.childViewControllers.count > 0) {
-                self.switchToViewController(destination: segue.destination, origin: self.childViewControllers[0])
+            if (self.children.count > 0) {
+                self.switchToViewController(destination: segue.destination, origin: self.children[0])
             } else {
-                self.addChildViewController(segue.destination)
+                self.addChild(segue.destination)
                 segue.destination.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
                 self.view.addSubview(segue.destination.view)
-                segue.destination.didMove(toParentViewController: self)
+                segue.destination.didMove(toParent: self)
             }
             break
         case eightByNineTableSegueID:
-            if (self.childViewControllers.count > 0) {
-                self.switchToViewController(destination: segue.destination, origin: self.childViewControllers[0])
+            if (self.children.count > 0) {
+                self.switchToViewController(destination: segue.destination, origin: self.children[0])
             } else {
-                self.addChildViewController(segue.destination)
+                self.addChild(segue.destination)
                 segue.destination.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
                 self.view.addSubview(segue.destination.view)
-                segue.destination.didMove(toParentViewController: self)
+                segue.destination.didMove(toParent: self)
             }
             break
         case elevenToNineteenTableSegueID:
-            if (self.childViewControllers.count > 0) {
-                self.switchToViewController(destination: segue.destination, origin: self.childViewControllers[0])
+            if (self.children.count > 0) {
+                self.switchToViewController(destination: segue.destination, origin: self.children[0])
             } else {
-                self.addChildViewController(segue.destination)
+                self.addChild(segue.destination)
                 segue.destination.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
                 self.view.addSubview(segue.destination.view)
-                segue.destination.didMove(toParentViewController: self)
+                segue.destination.didMove(toParent: self)
             }
             break
         case trueOrFalseSegueID:
-            if (self.childViewControllers.count > 0) {
-                self.switchToViewController(destination: segue.destination, origin: self.childViewControllers[0])
+            if (self.children.count > 0) {
+                self.switchToViewController(destination: segue.destination, origin: self.children[0])
             } else {
-                self.addChildViewController(segue.destination)
+                self.addChild(segue.destination)
                 segue.destination.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
                 self.view.addSubview(segue.destination.view)
-                segue.destination.didMove(toParentViewController: self)
+                segue.destination.didMove(toParent: self)
             }
             break
         default:
@@ -99,11 +99,11 @@ class MMProblemContainerViewController: UIViewController {
     
     func switchToViewController(destination: UIViewController, origin: UIViewController) {
         destination.view.frame =  CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
-        origin.willMove(toParentViewController: nil)
-        self.addChildViewController(destination)
+        origin.willMove(toParent: nil)
+        self.addChild(destination)
         self.transition(from: origin, to: destination, duration: 0.25, options: .transitionCrossDissolve, animations: nil) { (isFinished) in
-            origin.removeFromParentViewController()
-            destination.didMove(toParentViewController: self)
+            origin.removeFromParent()
+            destination.didMove(toParent: self)
             
         }
     }

@@ -391,8 +391,8 @@ class MMProblemGenerator {
              4. Randomly generate the operation '+' or '-' and compose the problem 'A + B' or 'A - B'. DONE!!
              */
             let randomlyChooseThreeOrFourDigitOpA = arc4random_uniform(2)
-            let randomlyChooseAdditionOrSubtraction = arc4random_uniform(2)
-            let randomlyChooseTwoOrThreeDigitOpA = Int32(-1)
+            _ = arc4random_uniform(2)
+            _ = Int32(-1)
             var criteriaNotSatisfied = true;
             var opA = Int32(-1)
             var opB = Int32(-1)
@@ -577,8 +577,8 @@ class MMProblemGenerator {
     private func generateLecture4Problem() -> MMProblem {
         // There are 10 types of problem in Lecture 4, so we must randomly generate one from the 5 possible types
         let lecture4ProblemType = arc4random_uniform(10) + 1
-        var expression = "Undefined expression: Lecture 4"
-        var result = UInt32(0)
+        let expression = "Undefined expression: Lecture 4"
+        _ = UInt32(0)
         var tipSheet = [
             "A number is divisible by 2 only if it ends in 0, 2, 4, 6, or 8.",
             "A number is divisible by 3 if and only if the sum of its digits are divisible by 3. For example, 1234 is not a multiple of 3 since 1 + 2 + 3 + 4 = 10, which is not divisible by 3. However, 12345 is divisible by 3 since 1 + 2 + 3 + 4 + 5 = 15, which is 3 × 5.",
@@ -601,7 +601,7 @@ class MMProblemGenerator {
             "9",
             "10"
         ]
-        var problem = MMProblem(expressionText: expression, solution: Float(0.0), tipSheetText: tipSheet[Int(lecture4ProblemType) - 1], problemType: "standard")
+        let problem = MMProblem(expressionText: expression, solution: Float(0.0), tipSheetText: tipSheet[Int(lecture4ProblemType) - 1], problemType: "standard")
         
         switch (lecture4ProblemType) {
         case 1:
