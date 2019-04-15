@@ -576,13 +576,13 @@ class MMProblemGenerator {
     
     private func generateLecture4Problem() -> MMProblem {
         // There are 10 types of problem in Lecture 4, so we must randomly generate one from the 5 possible types
-        let lecture4ProblemType = 1 //arc4random_uniform(10) + 1
+        let lecture4ProblemType = 6 //arc4random_uniform(10) + 1
         let expression = "Undefined expression: Lecture 4"
         _ = UInt32(0)
         var tipSheet = [
             "A number is divisible by 2 only if it ends in 0, 2, 4, 6, or 8.",
             "A number is divisible by 3 if and only if the sum of its digits are divisible by 3. For example, 1234 is not a multiple of 3 since 1 + 2 + 3 + 4 = 10, which is not divisible by 3. However, 12345 is divisible by 3 since 1 + 2 + 3 + 4 + 5 = 15, which is 3 × 5.",
-            "A number is divislble by 4 if the last 2 digits are 00 or a multiple of 4. For example, 271828 is a multiple of 4 because the last 2 digits - 28 - are a multiple of 4: 4 × 7 = 28.",
+            "A number is divisible by 4 if the last 2 digits are 00 or a multiple of 4 other than 4. For example, 271828 is a multiple of 4 because the last 2 digits - 28 - are a multiple of 4: 4 × 7 = 28.",
             "A number is divisible by 5 only if it ends in 0 or 5.",
             "A number is divisible by 6 when it is divisible by both 2 and 3. For example, 474 is divisble by 2 since we recall the rule for determining divisibility by 2 which states that if the number ends in 0, 2, 4, 6, or 8, then it is divisible by 2. In this case, it ends in 4. The number 474 is divisible by 3 since we then recall the rule for determining divisibility by 3 which states a number is divisible by 3 if the sum of its digits are divisible by 3. In this case, 4 + 7 + 4 = 15, which is divisible by 3. Therefore, it follows that 474 is thus divisible by 6, since it is also divisible by 2 and 3.",
             "To determine if a number is divisible by 7, a few tricks can be used. One trick goes as follows: (1) remove the last digit of the number (2) double this number (3) subtract it from the rest of the number. If the result is divisible by 7, then the number itself is divisible by 7. If the result is too large to determine by quick inspection that it is divisible by 7, you can run the algorithm again. For example, is 112 divisible by 7? (1) remove 2 and (2) double it to get 4. (3) Subtract 4 from 11 to get 7. Is 7 divisible by 7? Of course it is, therefore, it follows 112 is divisible by 7. Another example: is 2345 divisible by 7? Apply the algorithm: (1) remove 5 and (2) double it to get 10. (3) Subtract 10 from 234 to get 224. Is 224 divisible by 7? We're not sure, so we run the algorithm again on this result: (1) remove the last digit 4 and (2) double it to get 8, then (3) subtract 8 from 22 to get 14. Is 14 divisible by 7? Of course it is, hence it follows that 224 is divisible by 7. Another way to determine if a number is divisible by 7 is by using the 'Create a Zero, Kill a Zero' rule, which might be easier to remember. This method works as follows: is 1234 divisible by 7? (1) subtract or add multiple of 7 that will cause the result to end in 0...14 works...1234 - 14 = 1220. (2) We created a zero here, note 122'0'. (3) Now we 'kill' the zero to get 122. (4) Now ask, is 122 divisible by 7? We're not sure, so we repeat the algorithm: (1) 28 is a multiple of 7, so add that to 122 to get 150. (2) We created a zero! 15'0'. (3) Again, 'kill' the zero to get 15. (4) Is 15 a multiple of 7? Nope. Therefore, 2345 is not divisible by 7.",
@@ -624,14 +624,98 @@ class MMProblemGenerator {
             problem.solution = Float(shouldMakeItEven)
             break
         case 2:
+            var someNumThatMightBeDivBy3 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 3
+            let shouldMakeItDivBy3 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 3, so make it indivisible by 3 by subtracting 1 */
+            if (someNumThatMightBeDivBy3 % 3 == 0 && shouldMakeItDivBy3 == 0) {
+                someNumThatMightBeDivBy3 = someNumThatMightBeDivBy3 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy3 % 3 != 0 && shouldMakeItDivBy3 == 1) {
+                /* the generated number is not divisible by 3 but we want to make it divisible by 3 */
+                someNumThatMightBeDivBy3 = someNumThatMightBeDivBy3 * 3
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy3) divisible by 3?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy3)
             break
         case 3:
+            var someNumThatMightBeDivBy4 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 4
+            let shouldMakeItDivBy4 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 4, so make it indivisible by 4 by subtracting 1 */
+            if (someNumThatMightBeDivBy4 % 4 == 0 && shouldMakeItDivBy4 == 0) {
+                someNumThatMightBeDivBy4 = someNumThatMightBeDivBy4 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy4 % 4 != 0 && shouldMakeItDivBy4 == 1) {
+                /* the generated number is not divisible by 4 but we want to make it divisible by 4 */
+                someNumThatMightBeDivBy4 = someNumThatMightBeDivBy4 * 4
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy4) divisible by 4?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy4)
             break
         case 4:
+            var someNumThatMightBeDivBy5 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 5
+            let shouldMakeItDivBy5 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 5, so make it indivisible by 5 by subtracting 1 */
+            if (someNumThatMightBeDivBy5 % 5 == 0 && shouldMakeItDivBy5 == 0) {
+                someNumThatMightBeDivBy5 = someNumThatMightBeDivBy5 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy5 % 5 != 0 && shouldMakeItDivBy5 == 1) {
+                /* the generated number is not divisible by 5 but we want to make it divisible by 5 */
+                someNumThatMightBeDivBy5 = someNumThatMightBeDivBy5 * 5
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy5) divisible by 5?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy5)
             break
         case 5:
-            break
+            var someNumThatMightBeDivBy6 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 4
+            let shouldMakeItDivBy6 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 6, so make it indivisible by 6 by subtracting 1 */
+            if (someNumThatMightBeDivBy6 % 6 == 0 && shouldMakeItDivBy6 == 0) {
+                someNumThatMightBeDivBy6 = someNumThatMightBeDivBy6 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy6 % 6 != 0 && shouldMakeItDivBy6 == 1) {
+                /* the generated number is not divisible by 6 but we want to make it divisible by 6 */
+                someNumThatMightBeDivBy6 = someNumThatMightBeDivBy6 * 6
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy6) divisible by 6?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy6)
         case 6:
+            var someNumThatMightBeDivBy7 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 7
+            let shouldMakeItDivBy7 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 7, so make it indivisible by 3 by subtracting 1 */
+            if (someNumThatMightBeDivBy7 % 7 == 0 && shouldMakeItDivBy7 == 0) {
+                someNumThatMightBeDivBy7 = someNumThatMightBeDivBy7 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy7 % 7 != 0 && shouldMakeItDivBy7 == 1) {
+                /* the generated number is not divisible by 7 but we want to make it divisible by 7 */
+                someNumThatMightBeDivBy7 = someNumThatMightBeDivBy7 * 7
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy7) divisible by 7?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy7)
             break
         case 7:
             break
