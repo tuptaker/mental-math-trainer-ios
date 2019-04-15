@@ -576,7 +576,7 @@ class MMProblemGenerator {
     
     private func generateLecture4Problem() -> MMProblem {
         // There are 10 types of problem in Lecture 4, so we must randomly generate one from the 5 possible types
-        let lecture4ProblemType = arc4random_uniform(10) + 1
+        let lecture4ProblemType = 1 //arc4random_uniform(10) + 1
         let expression = "Undefined expression: Lecture 4"
         _ = UInt32(0)
         var tipSheet = [
@@ -601,17 +601,27 @@ class MMProblemGenerator {
             "9",
             "10"
         ]
-        let problem = MMProblem(expressionText: expression, solution: Float(0.0), tipSheetText: tipSheet[Int(lecture4ProblemType) - 1], problemType: "standard")
+        var problem = MMProblem(expressionText: expression, solution: Float(0.0), tipSheetText: tipSheet[Int(lecture4ProblemType) - 1], problemType: "trueOrFalse")
         
         switch (lecture4ProblemType) {
         case 1:
             var someNumThatMightBeEven = arc4random_uniform(99999) + 1
             // randomize whether or not generated number is even
             let shouldMakeItEven = arc4random_uniform(2)
+            
+            /* randomly generated num is even, so make it odd by subtracting 1 */
+            if (someNumThatMightBeEven % 2 == 0 && shouldMakeItEven == 0) {
+                someNumThatMightBeEven = someNumThatMightBeEven - 1;
+            }
+            
             if (someNumThatMightBeEven % 2 != 0 && shouldMakeItEven == 1) {
                 /* the generated number is not even but we want to make it even */
-                someNumThatMightBeEven = someNumThatMightBeEven * 2;
+                someNumThatMightBeEven = someNumThatMightBeEven * 2
             }
+
+            let expression = "Is \(someNumThatMightBeEven) divisible by 2?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItEven)
             break
         case 2:
             break
