@@ -10,7 +10,7 @@ import UIKit
 
 class MMTipSheetViewController: UIViewController {
 
-    @IBOutlet weak var tipSheetLabel: UILabel!
+    @IBOutlet weak var tipSheetTextView: UITextView!
     var tipSheetText = ""
     
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class MMTipSheetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tipSheetLabel.text = self.tipSheetText
+        self.tipSheetTextView.text = self.tipSheetText
     }
 
     override func didReceiveMemoryWarning() {
