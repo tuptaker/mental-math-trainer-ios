@@ -576,7 +576,7 @@ class MMProblemGenerator {
     
     private func generateLecture4Problem() -> MMProblem {
         // There are 10 types of problem in Lecture 4, so we must randomly generate one from the 5 possible types
-        let lecture4ProblemType = 6 //arc4random_uniform(10) + 1
+        let lecture4ProblemType = arc4random_uniform(11) + 1
         let expression = "Undefined expression: Lecture 4"
         _ = UInt32(0)
         var tipSheet = [
@@ -703,7 +703,7 @@ class MMProblemGenerator {
             // randomize whether or not generated number is divisible by 7
             let shouldMakeItDivBy7 = arc4random_uniform(2)
             
-            /* randomly generated num is divisible by 7, so make it indivisible by 3 by subtracting 1 */
+            /* randomly generated num is divisible by 7, so make it indivisible by 7 by subtracting 1 */
             if (someNumThatMightBeDivBy7 % 7 == 0 && shouldMakeItDivBy7 == 0) {
                 someNumThatMightBeDivBy7 = someNumThatMightBeDivBy7 - 1;
             }
@@ -718,12 +718,99 @@ class MMProblemGenerator {
             problem.solution = Float(shouldMakeItDivBy7)
             break
         case 7:
+            var someNumThatMightBeDivBy8 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 8
+            let shouldMakeItDivBy8 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 8, so make it indivisible by 8 by subtracting 1 */
+            if (someNumThatMightBeDivBy8 % 8 == 0 && shouldMakeItDivBy8 == 0) {
+                someNumThatMightBeDivBy8 = someNumThatMightBeDivBy8 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy8 % 8 != 0 && shouldMakeItDivBy8 == 1) {
+                /* the generated number is not divisible by 8 but we want to make it divisible by 8 */
+                someNumThatMightBeDivBy8 = someNumThatMightBeDivBy8 * 8
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy8) divisible by 8?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy8)
             break
         case 8:
+            var someNumThatMightBeDivBy9 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 9
+            let shouldMakeItDivBy9 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 9, so make it indivisible by 9 by subtracting 1 */
+            if (someNumThatMightBeDivBy9 % 9 == 0 && shouldMakeItDivBy9 == 0) {
+                someNumThatMightBeDivBy9 = someNumThatMightBeDivBy9 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy9 % 9 != 0 && shouldMakeItDivBy9 == 1) {
+                /* the generated number is not divisible by 9 but we want to make it divisible by 9 */
+                someNumThatMightBeDivBy9 = someNumThatMightBeDivBy9 * 9
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy9) divisible by 9?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy9)
             break
         case 9:
+            var someNumThatMightBeDivBy10 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 10
+            let shouldMakeItDivBy10 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 10, so make it indivisible by 10 by subtracting 1 */
+            if (someNumThatMightBeDivBy10 % 10 == 0 && shouldMakeItDivBy10 == 0) {
+                someNumThatMightBeDivBy10 = someNumThatMightBeDivBy10 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy10 % 10 != 0 && shouldMakeItDivBy10 == 1) {
+                /* the generated number is not divisible by 10 but we want to make it divisible by 10 */
+                someNumThatMightBeDivBy10 = someNumThatMightBeDivBy10 * 10
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy10) divisible by 10?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy10)
             break
         case 10:
+            var someNumThatMightBeDivBy11 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 11
+            let shouldMakeItDivBy11 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 11, so make it indivisible by 11 by subtracting 1 */
+            if (someNumThatMightBeDivBy11 % 11 == 0 && shouldMakeItDivBy11 == 0) {
+                someNumThatMightBeDivBy11 = someNumThatMightBeDivBy11 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy11 % 11 != 0 && shouldMakeItDivBy11 == 1) {
+                /* the generated number is not divisible by 11 but we want to make it divisible by 11 */
+                someNumThatMightBeDivBy11 = someNumThatMightBeDivBy11 * 11
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy11) divisible by 11?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy11)
+            break
+        case 11:
+            var someNumThatMightBeDivBy12 = arc4random_uniform(99999) + 1
+            // randomize whether or not generated number is divisible by 12
+            let shouldMakeItDivBy12 = arc4random_uniform(2)
+            
+            /* randomly generated num is divisible by 12, so make it indivisible by 12 by subtracting 1 */
+            if (someNumThatMightBeDivBy12 % 12 == 0 && shouldMakeItDivBy12 == 0) {
+                someNumThatMightBeDivBy12 = someNumThatMightBeDivBy12 - 1;
+            }
+            
+            if (someNumThatMightBeDivBy12 % 12 != 0 && shouldMakeItDivBy12 == 1) {
+                /* the generated number is not divisible by 11 but we want to make it divisible by 11 */
+                someNumThatMightBeDivBy12 = someNumThatMightBeDivBy12 * 12
+            }
+            
+            let expression = "Is \(someNumThatMightBeDivBy12) divisible by 12?"
+            problem.expressionText = expression
+            problem.solution = Float(shouldMakeItDivBy12)
             break
         default:
             break
